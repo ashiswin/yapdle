@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  --color-yapdle-bg: #0f0f0f;
+  --color-yapdle-surface: #1a1a1a;
+  --color-yapdle-surface2: #252525;
+  --color-yapdle-border: #333333;
+  --color-yapdle-text: #e0e0e0;
+  --color-yapdle-muted: #888888;
+  --color-yapdle-accent: #4fc3f7;
+  --color-yapdle-correct: #4caf50;
+  --color-yapdle-wrong: #f44336;
+  --color-yapdle-share: #1db954;
+}
+
+body {
+  background-color: var(--color-yapdle-bg);
+  color: var(--color-yapdle-text);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.guess-enter {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+.guess-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+
+.thumbnail-reveal {
+  transition: filter 0.15s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-6px); }
+  20%, 40%, 60%, 80% { transform: translateX(6px); }
+}
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes bounce-in {
+  0% { transform: scale(0.3); opacity: 0; }
+  50% { transform: scale(1.08); }
+  70% { transform: scale(0.95); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.bounce-in {
+  animation: bounce-in 0.5s ease-out;
+}
