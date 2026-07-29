@@ -4,15 +4,16 @@ import { Thumbnail } from "./components/Thumbnail"
 import { GuessInput } from "./components/GuessInput"
 import { GuessList } from "./components/GuessList"
 import { ShareDialog } from "./components/ShareDialog"
-import { getDailyVideo, getYapdleNumber } from "./utils/game"
+import { ArchiveModal } from "./components/ArchiveModal"
+import { getDailyVideo, getYapdleNumber, saveToArchive, updateStreak, getStreak } from "./utils/game"
+import type { GuessEntry } from "./utils/game"
 import { getWrongResponse, getCorrectResponse, getLostResponse } from "./utils/responses"
 
 const MAX_GUESSES = 5
 
-interface GuessEntry {
-  title: string
-  response: string
-  correct: boolean
+function todayStr(): string {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
 export default function App() {
@@ -22,6 +23,8 @@ export default function App() {
   const [lost, setLost] = useState(false)
   const [shake, setShake] = useState(false)
   const [showShare, setShowShare] = useState(false)
+  const [showArchive, setShowArchive] = useState(false)
+  const [streak, setStreak] = useState(getStreak())
 
   const yapdleNumber = getYapdleNumber()
 
@@ -57,6 +60,16 @@ export default function App() {
     [dailyVideo.id]
   )
 
+  const finishGame = useCallback(
+    (newGuesses: GuessEntry[], didWin: boolean) => {
+      const date = todayStr()
+      saveToArchive(date, newGuesses, didWin)
+      updateStreak()
+      setStreak(getStreak())
+    },
+    []
+  )
+
   const handleGuess = useCallback(
     (title: string) => {
       const isCorrect = title === dailyVideo.title
@@ -72,16 +85,18 @@ export default function App() {
       if (isCorrect) {
         setWon(true)
         saveState(newGuesses, true, false)
+        finishGame(newGuesses, true)
       } else if (isLast) {
         setLost(true)
         saveState(newGuesses, false, true)
+        finishGame(newGuesses, false)
       } else {
         saveState(newGuesses, false, false)
         setShake(true)
         setTimeout(() => setShake(false), 500)
       }
     },
-    [guesses, dailyVideo.title, saveState]
+    [guesses, dailyVideo.title, saveState, finishGame]
   )
 
   const disabled = won || lost
@@ -94,7 +109,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center">
-      <Header />
+      <Header onArchive={() => setShowArchive(true)} />
 
       <main className="flex-1 w-full max-w-2xl mx-auto px-4 py-6 flex flex-col items-center gap-5">
         <div className="text-center">
@@ -164,6 +179,12 @@ export default function App() {
         guesses={previousTitles}
         won={won}
         videoTitle={dailyVideo.title}
+        streak={streak}
+      />
+
+      <ArchiveModal
+        open={showArchive}
+        onClose={() => setShowArchive(false)}
       />
     </div>
   )

@@ -11,23 +11,40 @@ function hashCode(str: string): number {
   return Math.abs(hash)
 }
 
-export function getDailySeed(): number {
-  const today = new Date()
-  const dateStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`
-  return hashCode(dateStr)
+function todayStr(): string {
+  const d = new Date()
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
-export function getDailyVideo(): Video {
+function yesterdayStr(): string {
+  const d = new Date()
+  d.setDate(d.getDate() - 1)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+}
+
+const ORIGIN = new Date("2026-07-28")
+
+export function getDailySeed(dateStr?: string): number {
+  const str = dateStr || todayStr()
+  return hashCode(str)
+}
+
+export function getDailyVideo(dateStr?: string): Video {
   const videos = getAllVideos()
-  const seed = getDailySeed()
+  const seed = getDailySeed(dateStr)
   return videos[seed % videos.length]
 }
 
-export function getYapdleNumber(): number {
-  const origin = new Date("2026-07-28")
-  const today = new Date()
-  const diff = Math.floor((today.getTime() - origin.getTime()) / (1000 * 60 * 60 * 24))
+export function getYapdleNumber(dateStr?: string): number {
+  const str = dateStr || todayStr()
+  const date = new Date(str + "T00:00:00")
+  const diff = Math.floor((date.getTime() - ORIGIN.getTime()) / (1000 * 60 * 60 * 24))
   return Math.max(1, diff + 1)
+}
+
+export function getDateFromNumber(num: number): string {
+  const d = new Date(ORIGIN.getTime() + (num - 1) * 1000 * 60 * 60 * 24)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
 export function shareResult(guesses: string[], won: boolean, _videoTitle: string): string {
@@ -45,4 +62,70 @@ export function shareResult(guesses: string[], won: boolean, _videoTitle: string
     `https://yapdle.com`,
   ]
   return lines.join("\n")
+}
+
+export interface GuessEntry {
+  title: string
+  response: string
+  correct: boolean
+}
+
+const STREAK_KEY = "yapdle_streak"
+
+export function getStreak(): number {
+  try {
+    const raw = localStorage.getItem(STREAK_KEY)
+    if (!raw) return 0
+    const data = JSON.parse(raw)
+    const { count, lastPlayedDate } = data
+    if (lastPlayedDate === todayStr()) return count
+    if (lastPlayedDate === yesterdayStr()) return count
+    return 0
+  } catch {
+    return 0
+  }
+}
+
+export function updateStreak(): void {
+  const today = todayStr()
+  const prev = getStreak()
+  let newCount: number
+
+  if (prev === 0) {
+    newCount = 1
+  } else {
+    const raw = localStorage.getItem(STREAK_KEY)
+    const data = raw ? JSON.parse(raw) : {}
+    if (data.lastPlayedDate === today) {
+      newCount = prev
+    } else {
+      newCount = prev + 1
+    }
+  }
+
+  localStorage.setItem(STREAK_KEY, JSON.stringify({ count: newCount, lastPlayedDate: today }))
+}
+
+const ARCHIVE_KEY = "yapdle_archive"
+
+export interface ArchiveEntry {
+  guesses: GuessEntry[]
+  won: boolean
+  yapdleNumber: number
+}
+
+export function getArchive(): Record<number, ArchiveEntry> {
+  try {
+    const raw = localStorage.getItem(ARCHIVE_KEY)
+    return raw ? JSON.parse(raw) : {}
+  } catch {
+    return {}
+  }
+}
+
+export function saveToArchive(dateStr: string, guesses: GuessEntry[], won: boolean): void {
+  const archive = getArchive()
+  const num = getYapdleNumber(dateStr)
+  archive[num] = { guesses, won, yapdleNumber: num }
+  localStorage.setItem(ARCHIVE_KEY, JSON.stringify(archive))
 }

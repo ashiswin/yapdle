@@ -7,9 +7,10 @@ interface ShareDialogProps {
   guesses: string[]
   won: boolean
   videoTitle: string
+  streak: number
 }
 
-export function ShareDialog({ open, onClose, guesses, won, videoTitle }: ShareDialogProps) {
+export function ShareDialog({ open, onClose, guesses, won, videoTitle, streak }: ShareDialogProps) {
   const [copied, setCopied] = useState(false)
   const shareText = shareResult(guesses, won, videoTitle)
 
@@ -44,6 +45,14 @@ export function ShareDialog({ open, onClose, guesses, won, videoTitle }: ShareDi
         <div className="bg-yapdle-bg rounded-lg p-4 mb-4 font-mono text-sm whitespace-pre-wrap border border-yapdle-border">
           {shareText}
         </div>
+
+        {streak > 0 && (
+          <div className="text-center mb-4">
+            <span className="text-yapdle-accent text-sm font-semibold">
+              {streak} day streak
+            </span>
+          </div>
+        )}
 
         <div className="flex gap-3">
           <button
