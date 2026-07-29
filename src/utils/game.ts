@@ -42,7 +42,7 @@ export function shareResult(guesses: string[], won: boolean, _videoTitle: string
     "",
     emojis.join(""),
     "",
-    `https://yapdle.vercel.app`,
+    `https://yapdle.com`,
   ]
   return lines.join("\n")
 }
