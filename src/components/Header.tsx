@@ -5,7 +5,7 @@ interface HeaderProps {
 export function Header({ onArchive }: HeaderProps) {
   return (
     <header className="w-full py-4 border-b border-yapdle-border">
-      <div className="relative flex items-center justify-between max-w-2xl mx-auto px-4">
+      <div className="flex items-center justify-between px-6">
         <div />
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-wide text-yapdle-accent">
