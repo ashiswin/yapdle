@@ -16,8 +16,15 @@ function todayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
+function stateKey(dateStr: string): string {
+  return dateStr === todayStr() ? "yapdle_state" : `yapdle_state_${dateStr}`
+}
+
 export default function App() {
-  const dailyVideo = getDailyVideo()
+  const [dateOverride, setDateOverride] = useState<string | null>(null)
+  const playDate = dateOverride || todayStr()
+  const isToday = playDate === todayStr()
+
   const [guesses, setGuesses] = useState<GuessEntry[]>([])
   const [won, setWon] = useState(false)
   const [lost, setLost] = useState(false)
@@ -26,30 +33,34 @@ export default function App() {
   const [showArchive, setShowArchive] = useState(false)
   const [streak, setStreak] = useState(getStreak())
 
-  const yapdleNumber = getYapdleNumber()
+  const dailyVideo = getDailyVideo(playDate)
+  const yapdleNumber = getYapdleNumber(playDate)
 
   useEffect(() => {
-    const saved = localStorage.getItem("yapdle_state")
+    const saved = localStorage.getItem(stateKey(playDate))
     if (saved) {
       try {
         const state = JSON.parse(saved)
-        if (state.date === new Date().toDateString() && state.videoId === dailyVideo.id) {
+        if (state.videoId === dailyVideo.id) {
           setGuesses(state.guesses || [])
           setWon(state.won || false)
           setLost(state.lost || false)
         }
       } catch {
-        localStorage.removeItem("yapdle_state")
+        localStorage.removeItem(stateKey(playDate))
       }
+    } else {
+      setGuesses([])
+      setWon(false)
+      setLost(false)
     }
-  }, [dailyVideo.id, dailyVideo.title])
+  }, [playDate, dailyVideo.id])
 
   const saveState = useCallback(
     (newGuesses: GuessEntry[], newWon: boolean, newLost: boolean) => {
       localStorage.setItem(
-        "yapdle_state",
+        stateKey(playDate),
         JSON.stringify({
-          date: new Date().toDateString(),
           videoId: dailyVideo.id,
           guesses: newGuesses,
           won: newWon,
@@ -57,17 +68,18 @@ export default function App() {
         })
       )
     },
-    [dailyVideo.id]
+    [playDate, dailyVideo.id]
   )
 
   const finishGame = useCallback(
     (newGuesses: GuessEntry[], didWin: boolean) => {
-      const date = todayStr()
-      saveToArchive(date, newGuesses, didWin)
-      updateStreak()
-      setStreak(getStreak())
+      saveToArchive(playDate, newGuesses, didWin)
+      if (isToday) {
+        updateStreak()
+        setStreak(getStreak())
+      }
     },
-    []
+    [playDate, isToday]
   )
 
   const handleGuess = useCallback(
@@ -99,6 +111,15 @@ export default function App() {
     [guesses, dailyVideo.title, saveState, finishGame]
   )
 
+  const handlePlayDate = useCallback((dateStr: string) => {
+    setDateOverride(dateStr)
+    setShowArchive(false)
+  }, [])
+
+  const handleBackToToday = useCallback(() => {
+    setDateOverride(null)
+  }, [])
+
   const disabled = won || lost
 
   const wrongGuesses = guesses.filter((g) => !g.correct).length
@@ -112,11 +133,26 @@ export default function App() {
       <Header onArchive={() => setShowArchive(true)} />
 
       <main className="flex-1 w-full max-w-2xl mx-auto px-4 py-6 flex flex-col items-center gap-5">
-        <div className="text-center">
-          <span className="text-yapdle-muted text-xs font-mono">
-            Yapdle #{yapdleNumber}
-          </span>
-        </div>
+        {!isToday && (
+          <div className="flex items-center gap-4">
+            <span className="text-yapdle-muted text-xs font-mono">
+              Playing Yapdle #{yapdleNumber} ({playDate})
+            </span>
+            <button
+              onClick={handleBackToToday}
+              className="text-yapdle-accent text-xs hover:underline"
+            >
+              Back to today
+            </button>
+          </div>
+        )}
+        {isToday && (
+          <div className="text-center">
+            <span className="text-yapdle-muted text-xs font-mono">
+              Yapdle #{yapdleNumber}
+            </span>
+          </div>
+        )}
 
         <Thumbnail
           thumbnailId={dailyVideo.thumbnailId}
@@ -155,7 +191,9 @@ export default function App() {
           <div className="w-full max-w-lg mx-auto p-4 rounded-lg border border-yapdle-wrong/20 bg-red-500/5 text-center bounce-in">
             <p className="text-yapdle-wrong font-medium mb-1">{lostMessage}</p>
             <p className="text-yapdle-muted text-xs mb-3">
-              Come back tomorrow for a new Yapdle!
+              {isToday
+                ? "Come back tomorrow for a new Yapdle!"
+                : "Better luck with today's Yapdle!"}
             </p>
             <button
               onClick={() => setShowShare(true)}
@@ -179,12 +217,13 @@ export default function App() {
         guesses={previousTitles}
         won={won}
         videoTitle={dailyVideo.title}
-        streak={streak}
+        streak={isToday ? streak : 0}
       />
 
       <ArchiveModal
         open={showArchive}
         onClose={() => setShowArchive(false)}
+        onPlay={handlePlayDate}
       />
     </div>
   )
