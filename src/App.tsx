@@ -37,23 +37,27 @@ export default function App() {
   const yapdleNumber = getYapdleNumber(playDate)
 
   useEffect(() => {
+    let nextGuesses: GuessEntry[] = []
+    let nextWon = false
+    let nextLost = false
+
     const saved = localStorage.getItem(stateKey(playDate))
     if (saved) {
       try {
         const state = JSON.parse(saved)
         if (state.videoId === dailyVideo.id) {
-          setGuesses(state.guesses || [])
-          setWon(state.won || false)
-          setLost(state.lost || false)
+          nextGuesses = state.guesses || []
+          nextWon = state.won || false
+          nextLost = state.lost || false
         }
       } catch {
         localStorage.removeItem(stateKey(playDate))
       }
-    } else {
-      setGuesses([])
-      setWon(false)
-      setLost(false)
     }
+
+    setGuesses(nextGuesses)
+    setWon(nextWon)
+    setLost(nextLost)
   }, [playDate, dailyVideo.id])
 
   const saveState = useCallback(
