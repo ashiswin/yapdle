@@ -3,22 +3,24 @@ import { Header } from "./components/Header"
 import { Thumbnail } from "./components/Thumbnail"
 import { GuessInput } from "./components/GuessInput"
 import { GuessList } from "./components/GuessList"
-import { ResponseMessage } from "./components/ResponseMessage"
 import { ShareDialog } from "./components/ShareDialog"
 import { getDailyVideo, getYapdleNumber } from "./utils/game"
 import { getWrongResponse, getCorrectResponse, getLostResponse } from "./utils/responses"
 
 const MAX_GUESSES = 5
 
+interface GuessEntry {
+  title: string
+  response: string
+  correct: boolean
+}
+
 export default function App() {
   const dailyVideo = getDailyVideo()
-  const [guesses, setGuesses] = useState<string[]>([])
+  const [guesses, setGuesses] = useState<GuessEntry[]>([])
   const [won, setWon] = useState(false)
   const [lost, setLost] = useState(false)
   const [shake, setShake] = useState(false)
-  const [responseMessage, setResponseMessage] = useState<string | null>(null)
-  const [responseType, setResponseType] = useState<"wrong" | "correct" | "lost" | null>(null)
-  const [showResponse, setShowResponse] = useState(false)
   const [showShare, setShowShare] = useState(false)
 
   const yapdleNumber = getYapdleNumber()
@@ -32,15 +34,6 @@ export default function App() {
           setGuesses(state.guesses || [])
           setWon(state.won || false)
           setLost(state.lost || false)
-          if (state.won) {
-            setResponseMessage(getCorrectResponse())
-            setResponseType("correct")
-            setShowResponse(true)
-          } else if (state.lost) {
-            setResponseMessage(getLostResponse(dailyVideo.title))
-            setResponseType("lost")
-            setShowResponse(true)
-          }
         }
       } catch {
         localStorage.removeItem("yapdle_state")
@@ -49,7 +42,7 @@ export default function App() {
   }, [dailyVideo.id, dailyVideo.title])
 
   const saveState = useCallback(
-    (newGuesses: string[], newWon: boolean, newLost: boolean) => {
+    (newGuesses: GuessEntry[], newWon: boolean, newLost: boolean) => {
       localStorage.setItem(
         "yapdle_state",
         JSON.stringify({
@@ -67,39 +60,37 @@ export default function App() {
   const handleGuess = useCallback(
     (title: string) => {
       const isCorrect = title === dailyVideo.title
-      const newGuesses = [...guesses, title]
+      const isLast = guesses.length + 1 >= MAX_GUESSES
+
+      const entry: GuessEntry = isCorrect
+        ? { title, response: getCorrectResponse(), correct: true }
+        : { title, response: getWrongResponse(), correct: false }
+
+      const newGuesses = [...guesses, entry]
       setGuesses(newGuesses)
 
       if (isCorrect) {
         setWon(true)
         saveState(newGuesses, true, false)
-        setResponseMessage(getCorrectResponse())
-        setResponseType("correct")
-        setShowResponse(true)
-        setTimeout(() => setShowShare(true), 2500)
-      } else if (newGuesses.length >= MAX_GUESSES) {
+      } else if (isLast) {
         setLost(true)
         saveState(newGuesses, false, true)
-        setResponseMessage(getLostResponse(dailyVideo.title))
-        setResponseType("lost")
-        setShowResponse(true)
-        setTimeout(() => setShowShare(true), 2000)
       } else {
         saveState(newGuesses, false, false)
-        setResponseMessage(getWrongResponse())
-        setResponseType("wrong")
-        setShowResponse(false)
         setShake(true)
-        requestAnimationFrame(() => {
-          setShowResponse(true)
-          setTimeout(() => setShake(false), 500)
-        })
+        setTimeout(() => setShake(false), 500)
       }
     },
     [guesses, dailyVideo.title, saveState]
   )
 
   const disabled = won || lost
+
+  const wrongGuesses = guesses.filter((g) => !g.correct).length
+  const blurPx = won || lost ? 0 : Math.max(0, 8 - wrongGuesses * 2)
+
+  const previousTitles = guesses.map((g) => g.title)
+  const lostMessage = lost ? getLostResponse(dailyVideo.title) : null
 
   return (
     <div className="min-h-screen flex flex-col items-center">
@@ -114,37 +105,50 @@ export default function App() {
 
         <Thumbnail
           thumbnailId={dailyVideo.thumbnailId}
-          revealed={won || lost}
+          blurPx={blurPx}
         />
 
         <GuessList
           guesses={guesses}
           maxGuesses={MAX_GUESSES}
-          correctTitle={dailyVideo.title}
-          won={won}
         />
-
-        {showResponse && responseMessage && (
-          <ResponseMessage
-            message={responseMessage}
-            type={responseType}
-            visible={true}
-          />
-        )}
 
         {!disabled && (
           <GuessInput
             onGuess={handleGuess}
             disabled={disabled}
-            previousGuesses={guesses}
+            previousGuesses={previousTitles}
             shake={shake}
           />
         )}
 
-        {disabled && (
-          <p className="text-yapdle-muted text-xs mt-2">
-            Come back tomorrow for a new Yapdle!
-          </p>
+        {won && (
+          <div className="w-full max-w-lg mx-auto p-4 rounded-lg border border-yapdle-correct/20 bg-green-500/5 text-center bounce-in">
+            <p className="text-yapdle-correct font-medium mb-3">
+              {guesses[guesses.length - 1]?.response}
+            </p>
+            <button
+              onClick={() => setShowShare(true)}
+              className="px-5 py-2 rounded-lg bg-yapdle-share hover:bg-green-600 text-white font-medium transition-colors text-sm"
+            >
+              Share
+            </button>
+          </div>
+        )}
+
+        {lost && (
+          <div className="w-full max-w-lg mx-auto p-4 rounded-lg border border-yapdle-wrong/20 bg-red-500/5 text-center bounce-in">
+            <p className="text-yapdle-wrong font-medium mb-1">{lostMessage}</p>
+            <p className="text-yapdle-muted text-xs mb-3">
+              Come back tomorrow for a new Yapdle!
+            </p>
+            <button
+              onClick={() => setShowShare(true)}
+              className="px-5 py-2 rounded-lg bg-yapdle-share hover:bg-green-600 text-white font-medium transition-colors text-sm"
+            >
+              Share
+            </button>
+          </div>
         )}
       </main>
 
@@ -157,7 +161,7 @@ export default function App() {
       <ShareDialog
         open={showShare}
         onClose={() => setShowShare(false)}
-        guesses={guesses}
+        guesses={previousTitles}
         won={won}
         videoTitle={dailyVideo.title}
       />

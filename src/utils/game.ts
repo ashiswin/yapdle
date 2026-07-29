@@ -40,7 +40,7 @@ export function shareResult(guesses: string[], won: boolean, _videoTitle: string
   const lines = [
     `Yapdle #${yapdleNumber} ${total}/5`,
     "",
-    ...emojis.join("").match(/.{1,5}/g) || [emojis.join("")],
+    emojis.join(""),
     "",
     `https://yapdle.vercel.app`,
   ]

@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from "react"
+import { useState, useRef, useEffect, useCallback, useMemo } from "react"
 import { getAllTitles } from "../data/videos"
 
 interface GuessInputProps {
@@ -6,6 +6,26 @@ interface GuessInputProps {
   disabled: boolean
   previousGuesses: string[]
   shake: boolean
+}
+
+function highlightMatch(title: string, query: string) {
+  const lowerTitle = title.toLowerCase()
+  const lowerQuery = query.toLowerCase()
+  const idx = lowerTitle.indexOf(lowerQuery)
+
+  if (idx === -1) return title
+
+  const before = title.slice(0, idx)
+  const match = title.slice(idx, idx + query.length)
+  const after = title.slice(idx + query.length)
+
+  return (
+    <>
+      {before}
+      <span className="text-yapdle-accent font-semibold">{match}</span>
+      {after}
+    </>
+  )
 }
 
 export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessInputProps) {
@@ -16,13 +36,24 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
   const dropdownRef = useRef<HTMLDivElement>(null)
   const allTitles = getAllTitles()
 
-  const filteredTitles = input.trim()
-    ? allTitles.filter(
+  const filteredTitles = useMemo(() => {
+    if (!input.trim()) return []
+
+    const lowerInput = input.toLowerCase()
+
+    return allTitles
+      .filter(
         (t) =>
-          t.toLowerCase().includes(input.toLowerCase()) &&
+          t.toLowerCase().includes(lowerInput) &&
           !previousGuesses.includes(t)
       )
-    : []
+      .sort((a, b) => {
+        const aIdx = a.toLowerCase().indexOf(lowerInput)
+        const bIdx = b.toLowerCase().indexOf(lowerInput)
+        if (aIdx !== bIdx) return aIdx - bIdx
+        return a.length - b.length
+      })
+  }, [input, previousGuesses, allTitles])
 
   const reset = useCallback(() => {
     setInput("")
@@ -82,8 +113,6 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
         handleSubmit(filteredTitles[selectedIndex])
       } else if (filteredTitles.length === 1) {
         handleSubmit(filteredTitles[0])
-      } else if (input.trim() && allTitles.includes(input.trim())) {
-        handleSubmit(input.trim())
       }
     } else if (e.key === "Escape") {
       setShowDropdown(false)
@@ -118,7 +147,7 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
       {showDropdown && filteredTitles.length > 0 && !disabled && (
         <div
           ref={dropdownRef}
-          className="absolute top-full mt-1 w-full max-h-60 overflow-y-auto bg-yapdle-surface border border-yapdle-border rounded-lg shadow-xl z-50"
+          className="absolute bottom-full mb-1 w-full max-h-60 overflow-y-auto bg-yapdle-surface border border-yapdle-border rounded-lg shadow-xl z-50"
         >
           {filteredTitles.map((title, i) => (
             <button
@@ -130,14 +159,14 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
                   : "text-yapdle-text"
               }`}
             >
-              {title}
+              {highlightMatch(title, input.trim())}
             </button>
           ))}
         </div>
       )}
 
       {input.trim() && filteredTitles.length === 0 && !disabled && showDropdown && (
-        <div className="absolute top-full mt-1 w-full bg-yapdle-surface border border-yapdle-border rounded-lg shadow-xl z-50 p-4 text-center text-yapdle-muted text-sm">
+        <div className="absolute bottom-full mb-1 w-full bg-yapdle-surface border border-yapdle-border rounded-lg shadow-xl z-50 p-4 text-center text-yapdle-muted text-sm">
           No matching titles found
         </div>
       )}
