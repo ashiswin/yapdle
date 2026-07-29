@@ -24,7 +24,7 @@ export function getDailyVideo(): Video {
 }
 
 export function getYapdleNumber(): number {
-  const origin = new Date("2026-07-01")
+  const origin = new Date("2026-07-28")
   const today = new Date()
   const diff = Math.floor((today.getTime() - origin.getTime()) / (1000 * 60 * 60 * 24))
   return Math.max(1, diff + 1)
