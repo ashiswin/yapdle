@@ -22,7 +22,7 @@ function yesterdayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
-const ORIGIN = new Date("2026-07-28")
+const ORIGIN_MS = Date.UTC(2026, 6, 28)
 
 export function getDailySeed(dateStr?: string): number {
   const str = dateStr || todayStr()
@@ -37,14 +37,16 @@ export function getDailyVideo(dateStr?: string): Video {
 
 export function getYapdleNumber(dateStr?: string): number {
   const str = dateStr || todayStr()
-  const date = new Date(str + "T00:00:00")
-  const diff = Math.floor((date.getTime() - ORIGIN.getTime()) / (1000 * 60 * 60 * 24))
+  const [y, m, d] = str.split("-").map(Number)
+  const dateMs = Date.UTC(y, m - 1, d)
+  const diff = Math.floor((dateMs - ORIGIN_MS) / (1000 * 60 * 60 * 24))
   return Math.max(1, diff + 1)
 }
 
 export function getDateFromNumber(num: number): string {
-  const d = new Date(ORIGIN.getTime() + (num - 1) * 1000 * 60 * 60 * 24)
-  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+  const ms = ORIGIN_MS + (num - 1) * 1000 * 60 * 60 * 24
+  const d = new Date(ms)
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}-${String(d.getUTCDate()).padStart(2, "0")}`
 }
 
 export function shareResult(guesses: string[], won: boolean, _videoTitle: string): string {
