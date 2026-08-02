@@ -36,12 +36,13 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-md w-full bounce-in shadow-2xl max-h-[80vh] overflow-y-auto">
-        <h2 className="text-xl font-bold text-yapdle-accent text-center mb-4">
+      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-md w-full bounce-in shadow-2xl flex flex-col max-h-[80vh]">
+        <h2 className="text-xl font-bold text-yapdle-accent text-center mb-4 shrink-0">
           Archive
         </h2>
 
-        <div className="grid grid-cols-5 gap-2 mb-4">
+        <div className="overflow-y-auto flex-1 min-h-0">
+          <div className="grid grid-cols-5 gap-2 mb-4">
           {days.map(({ num, date, entry }) => {
             const isToday = date === today
 
@@ -116,9 +117,10 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
               ))}
             </div>
           </div>
-        )}
+          )}
+        </div>
 
-        <div className="text-center text-yapdle-muted text-xs space-y-1">
+        <div className="text-center text-yapdle-muted text-xs space-y-1 shrink-0 pt-2">
           <p>
             <span className="inline-block mr-2">🟩 Won</span>
             <span className="inline-block mr-2">🟥 Lost</span>
@@ -129,7 +131,7 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
 
         <button
           onClick={onClose}
-          className="w-full mt-4 px-4 py-2 text-yapdle-muted hover:text-yapdle-text transition-colors text-sm"
+          className="w-full mt-3 px-4 py-2 text-yapdle-muted hover:text-yapdle-text transition-colors text-sm shrink-0"
         >
           Close
         </button>
