@@ -264,6 +264,7 @@ export default function App() {
       <LeaderboardModal
         open={showLeaderboard}
         onClose={() => setShowLeaderboard(false)}
+        username={username}
       />
     </div>
   )
