@@ -6,6 +6,7 @@ interface AuthState {
   loading: boolean
   signUp: (username: string, password: string) => Promise<string | null>
   signIn: (username: string, password: string) => Promise<string | null>
+  signInWithGoogle: () => Promise<void>
   signOut: () => Promise<void>
 }
 
@@ -23,10 +24,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
             ({ data }) => setUsername(data?.username ?? null),
             () => {}
           )
-        setLoading(false)
-      } else {
-        setLoading(false)
       }
+      setLoading(false)
     })
 
     const { data: subscription } = supabase.auth.onAuthStateChange(async (_event, session) => {
@@ -65,12 +64,19 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return error?.message ?? null
   }
 
+  const signInWithGoogle = async () => {
+    await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin },
+    })
+  }
+
   const signOut = async () => {
     await supabase.auth.signOut()
   }
 
   return (
-    <AuthContext.Provider value={{ username, loading, signUp, signIn, signOut }}>
+    <AuthContext.Provider value={{ username, loading, signUp, signIn, signInWithGoogle, signOut }}>
       {children}
     </AuthContext.Provider>
   )
