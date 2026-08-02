@@ -9,7 +9,7 @@ export function Header({ onArchive, onAuth, onLeaderboard, username }: HeaderPro
   return (
     <header className="w-full py-4 border-b border-yapdle-border">
       <div className="grid grid-cols-3 items-center px-6">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
           <button
             onClick={onLeaderboard}
             className="text-yapdle-muted hover:text-yapdle-text transition-colors"
