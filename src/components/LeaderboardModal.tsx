@@ -105,8 +105,8 @@ export function LeaderboardModal({ open, onClose, username }: LeaderboardModalPr
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-lg w-full bounce-in shadow-2xl max-h-[80vh] overflow-y-auto">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
+      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-lg w-full bounce-in shadow-2xl max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
         <h2 className="text-xl font-bold text-yapdle-accent text-center mb-4">
           Statistics
         </h2>
