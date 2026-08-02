@@ -34,7 +34,7 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
-  const allTitles = getAllTitles()
+  const allTitles = useMemo(() => getAllTitles(), [])
 
   const filteredTitles = useMemo(() => {
     if (!input.trim()) return []
@@ -159,6 +159,7 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
 
       {showDropdown && filteredTitles.length > 0 && !disabled && (
         <div
+          key={input}
           ref={dropdownRef}
           className="absolute bottom-full mb-1 w-full max-h-60 overflow-y-auto bg-yapdle-surface border border-yapdle-border rounded-lg shadow-xl z-50"
         >
