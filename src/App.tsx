@@ -228,6 +228,7 @@ export default function App() {
         open={showArchive}
         onClose={() => setShowArchive(false)}
         onPlay={handlePlayDate}
+        onBackToToday={handleBackToToday}
       />
     </div>
   )

@@ -6,6 +6,7 @@ interface ArchiveModalProps {
   open: boolean
   onClose: () => void
   onPlay: (dateStr: string) => void
+  onBackToToday: () => void
 }
 
 function emojiForEntry(entry: ArchiveEntry | undefined): string {
@@ -18,7 +19,7 @@ function todayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
-export function ArchiveModal({ open, onClose, onPlay }: ArchiveModalProps) {
+export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveModalProps) {
   const archive = getArchive()
   const currentNumber = getYapdleNumber()
   const today = todayStr()
@@ -43,9 +44,21 @@ export function ArchiveModal({ open, onClose, onPlay }: ArchiveModalProps) {
         <div className="grid grid-cols-5 gap-2 mb-4">
           {days.map(({ num, date, entry }) => {
             const isToday = date === today
-            const isUnplayed = !entry && !isToday
 
-            if (isUnplayed) {
+            if (isToday && !entry) {
+              return (
+                <button
+                  key={num}
+                  onClick={onBackToToday}
+                  className="aspect-square rounded-lg flex items-center justify-center border border-yapdle-accent/30 bg-yapdle-accent/5 hover:bg-yapdle-accent/10 transition-colors cursor-pointer"
+                  title="Go to today's Yapdle"
+                >
+                  <span className="text-yapdle-accent text-xs font-medium">Today</span>
+                </button>
+              )
+            }
+
+            if (!entry) {
               return (
                 <button
                   key={num}
@@ -61,27 +74,17 @@ export function ArchiveModal({ open, onClose, onPlay }: ArchiveModalProps) {
             return (
               <button
                 key={num}
-                onClick={() => entry && setViewing(viewing === num ? null : num)}
+                onClick={() => setViewing(viewing === num ? null : num)}
                 className={`aspect-square rounded-lg flex items-center justify-center border transition-colors ${
-                  entry
-                    ? viewing === num
-                      ? "border-yapdle-accent/50 bg-yapdle-accent/10"
-                      : entry.won
-                      ? "border-yapdle-correct/30 bg-green-500/10 hover:bg-green-500/20 cursor-pointer"
-                      : "border-yapdle-wrong/20 bg-red-500/5 hover:bg-red-500/10 cursor-pointer"
-                    : "border-yapdle-border/20 bg-yapdle-surface/30 opacity-50 cursor-default"
+                  viewing === num
+                    ? "border-yapdle-accent/50 bg-yapdle-accent/10"
+                    : entry.won
+                    ? "border-yapdle-correct/30 bg-green-500/10 hover:bg-green-500/20 cursor-pointer"
+                    : "border-yapdle-wrong/20 bg-red-500/5 hover:bg-red-500/10 cursor-pointer"
                 }`}
-                title={
-                  isToday && !entry
-                    ? "Today's Yapdle"
-                    : `Yapdle #${num}${entry ? (entry.won ? " - Won" : " - Lost") : ""}`
-                }
+                title={`Yapdle #${num}${entry.won ? " - Won" : " - Lost"}`}
               >
-                {entry ? (
-                  <span>{emojiForEntry(entry)}</span>
-                ) : (
-                  <span>{emojiForEntry(undefined)}</span>
-                )}
+                <span>{emojiForEntry(entry)}</span>
               </button>
             )
           })}
