@@ -8,7 +8,7 @@ interface HeaderProps {
 export function Header({ onArchive, onAuth, onLeaderboard, username }: HeaderProps) {
   return (
     <header className="w-full py-4 border-b border-yapdle-border">
-      <div className="flex items-center justify-between px-6">
+      <div className="grid grid-cols-3 items-center px-6">
         <div className="flex items-center gap-2">
           <button
             onClick={onLeaderboard}
@@ -42,12 +42,14 @@ export function Header({ onArchive, onAuth, onLeaderboard, username }: HeaderPro
             Guess the penguinz0 video from its thumbnail
           </p>
         </div>
-        <button
-          onClick={onAuth}
-          className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
-        >
-          {username ?? "Sign in"}
-        </button>
+        <div className="flex justify-end">
+          <button
+            onClick={onAuth}
+            className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
+          >
+            {username ?? "Sign in"}
+          </button>
+        </div>
       </div>
     </header>
   )
