@@ -48,9 +48,22 @@ export function GuessInput({ onGuess, disabled, previousGuesses, shake }: GuessI
           !previousGuesses.includes(t)
       )
       .sort((a, b) => {
-        const aIdx = a.toLowerCase().indexOf(lowerInput)
-        const bIdx = b.toLowerCase().indexOf(lowerInput)
+        const aLower = a.toLowerCase()
+        const bLower = b.toLowerCase()
+        const aIdx = aLower.indexOf(lowerInput)
+        const bIdx = bLower.indexOf(lowerInput)
+
+        // Word boundary: query starts a word or is immediately after the match
+        const aWord = aIdx === 0 || /[^a-z0-9]/.test(aLower[aIdx - 1] ?? "")
+        const bWord = bIdx === 0 || /[^a-z0-9]/.test(bLower[bIdx - 1] ?? "")
+
+        // Prefer word-boundary matches
+        if (aWord !== bWord) return aWord ? -1 : 1
+
+        // Prefer matches at or near the start
         if (aIdx !== bIdx) return aIdx - bIdx
+
+        // Shorter titles first
         return a.length - b.length
       })
   }, [input, previousGuesses, allTitles])
