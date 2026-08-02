@@ -93,6 +93,22 @@ existing = {}  # thumbnailId -> {"title": str, "added": str}
 if os.path.exists(output_path):
     with open(output_path) as f:
         content = f.read()
+    found_added = any("added" in m.group(0) for m in re.finditer(
+    r'\{\s*id:\s*"[^"]+",\s*title:\s*"((?:[^"\\]|\\.)*)",\s*thumbnailId:\s*"([^"]+)"(?:\s*,\s*added:\s*"([^"]+)")?\s*\}',
+    content
+))
+
+# Detect format: if no added dates found, this is a migration from old format.
+# All existing entries get the origin date.
+if not found_added:
+    for m in re.finditer(
+        r'\{\s*id:\s*"[^"]+",\s*title:\s*"((?:[^"\\]|\\.)*)",\s*thumbnailId:\s*"([^"]+)"',
+        content
+    ):
+        title = m.group(1).replace('\\"', '"').replace("\\\\", "\\")
+        vid = m.group(2)
+        existing[vid] = {"title": title, "added": "2026-07-28"}
+else:
     for m in re.finditer(
         r'\{\s*id:\s*"[^"]+",\s*title:\s*"((?:[^"\\]|\\.)*)",\s*thumbnailId:\s*"([^"]+)",\s*added:\s*"([^"]+)"\s*\}',
         content
@@ -154,16 +170,7 @@ for vid in existing:
 new_order.sort(key=lambda vid: existing[vid]["added"])
 
 # ---------------------------------------------------------------------------
-# 5. First run: all scraped videos get origin date
-# ---------------------------------------------------------------------------
-if not old_order and new_ids:
-    # First run - assign origin date to all
-    for vid in existing:
-        existing[vid]["added"] = "2026-07-28"
-    old_order = list(existing.keys())
-
-# ---------------------------------------------------------------------------
-# 6. Generate output
+# 5. Generate output
 # ---------------------------------------------------------------------------
 def escape_ts(s):
     return s.replace("\\", "\\\\").replace('"', '\\"')
