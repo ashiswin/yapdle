@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { getArchive, getYapdleNumber, getDateFromNumber } from "../utils/game"
 import type { ArchiveEntry } from "../utils/game"
 
@@ -24,6 +24,13 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
   const currentNumber = getYapdleNumber()
   const today = todayStr()
   const [viewing, setViewing] = useState<number | null>(null)
+  const scrollRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (open && scrollRef.current) {
+      scrollRef.current.scrollTop = scrollRef.current.scrollHeight
+    }
+  }, [open])
 
   const days: { num: number; date: string; entry: ArchiveEntry | undefined }[] = []
   for (let n = 1; n <= currentNumber; n++) {
@@ -41,7 +48,7 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
           Archive
         </h2>
 
-        <div className="overflow-y-auto flex-1 min-h-0">
+        <div ref={scrollRef} className="overflow-y-auto flex-1 min-h-0">
           <div className="grid grid-cols-5 gap-2 mb-4">
           {days.map(({ num, date, entry }) => {
             const isToday = date === today
