@@ -1,13 +1,11 @@
-import type { User } from "@supabase/supabase-js"
-
 interface HeaderProps {
   onArchive: () => void
   onAuth: () => void
   onLeaderboard: () => void
-  user: User | null
+  username: string | null
 }
 
-export function Header({ onArchive, onAuth, onLeaderboard, user }: HeaderProps) {
+export function Header({ onArchive, onAuth, onLeaderboard, username }: HeaderProps) {
   return (
     <header className="w-full py-4 border-b border-yapdle-border">
       <div className="flex items-center justify-between px-6">
@@ -30,7 +28,7 @@ export function Header({ onArchive, onAuth, onLeaderboard, user }: HeaderProps) 
             onClick={onAuth}
             className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
           >
-            {user ? user.email?.split("@")[0] : "Sign in"}
+            {username ?? "Sign in"}
           </button>
           <button
             onClick={onArchive}
