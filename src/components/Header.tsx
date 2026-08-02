@@ -25,16 +25,16 @@ export function Header({ onArchive, onAuth, onLeaderboard, username }: HeaderPro
         </div>
         <div className="flex items-center gap-3">
           <button
-            onClick={onAuth}
-            className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
-          >
-            {username ?? "Sign in"}
-          </button>
-          <button
             onClick={onArchive}
             className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
           >
             Archive
+          </button>
+          <button
+            onClick={onAuth}
+            className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
+          >
+            {username ?? "Sign in"}
           </button>
         </div>
       </div>
