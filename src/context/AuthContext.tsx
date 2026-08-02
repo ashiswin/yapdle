@@ -41,6 +41,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, [])
 
   const signUp = async (name: string, password: string) => {
+    const { data: existing } = await supabase.from("profiles").select("id").eq("username", name).maybeSingle()
+    if (existing) return "Username already taken"
+
     const email = `${name.toLowerCase().replace(/\s+/g, "_")}@yapdle.user`
     const { data, error } = await supabase.auth.signUp({
       email,
