@@ -25,7 +25,7 @@ function yesterdayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
 }
 
-const ORIGIN_MS = Date.UTC(2026, 6, 28)
+const ORIGIN_MS = Date.UTC(2026, 6, 1)
 
 export function getDailySeed(dateStr?: string): number {
   const str = dateStr || todayStr()
