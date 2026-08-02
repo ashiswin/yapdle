@@ -99,9 +99,12 @@ token = find_cont(yt)
 
 new_ids = []
 page = 1
-stopped_early = False
 
-while token and page <= 30:
+# For daily runs, stop after 2 consecutive empty pages
+MAX_EMPTY_PAGES = 2
+empty_streak = 0
+
+while token and page <= 60:
     print(f"Page {page}...", file=sys.stderr)
     body = {"context": context, "continuation": token}
     result = api_call(body)
@@ -115,18 +118,19 @@ while token and page <= 30:
 
     print(f"  {page_new} new on this page, {len(new_ids)} total new", file=sys.stderr)
 
-    # If this page had no new videos, assume we've caught up
-    if page_new == 0 and page > 1:
-        print("  No new videos on this page — stopping early", file=sys.stderr)
-        stopped_early = True
-        break
+    if page_new == 0:
+        empty_streak += 1
+        if empty_streak >= MAX_EMPTY_PAGES:
+            print(f"  {MAX_EMPTY_PAGES} consecutive empty pages — stopping", file=sys.stderr)
+            break
+    else:
+        empty_streak = 0
 
     token = find_cont(result)
     page += 1
     time.sleep(0.3)
 
-if not stopped_early:
-    print(f"Reached page limit ({page-1} pages)", file=sys.stderr)
+print(f"Reached page limit ({page-1} pages)", file=sys.stderr)
 
 # ---------------------------------------------------------------------------
 # 4. Fetch titles for new videos only

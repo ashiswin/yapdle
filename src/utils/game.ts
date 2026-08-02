@@ -5,10 +5,13 @@ function hashCode(str: string): number {
   let hash = 0
   for (let i = 0; i < str.length; i++) {
     const char = str.charCodeAt(i)
-    hash = (hash << 5) - hash + char
-    hash |= 0
+    hash = ((hash << 5) - hash + char) | 0
   }
   return Math.abs(hash)
+}
+
+function scramble(n: number): number {
+  return ((n * 2654435761) >>> 0)
 }
 
 function todayStr(): string {
@@ -32,7 +35,7 @@ export function getDailySeed(dateStr?: string): number {
 export function getDailyVideo(dateStr?: string): Video {
   const str = dateStr || todayStr()
   const videos = getAllVideos()
-  const seed = getDailySeed(str)
+  const seed = scramble(hashCode(str))
   const size = getPoolSizeOnDate(str)
   return videos[seed % size]
 }
