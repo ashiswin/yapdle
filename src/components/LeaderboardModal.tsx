@@ -29,11 +29,11 @@ function computeLocalStats(): PlayerStats {
   const nums = Object.keys(archive).map(Number).sort((a, b) => a - b)
   const played = nums.length
   const wins = nums.filter((n) => archive[n].won).length
-  const dist = [0, 0, 0, 0, 0]
-  for (const n of nums) {
-    if (archive[n].won) {
-      const g = archive[n].guesses.length
-      if (g >= 1 && g <= 5) dist[g - 1]++
+const dist = [0, 0, 0, 0, 0, 0]
+    for (const n of nums) {
+      if (archive[n].won) {
+        const g = archive[n].guesses.length
+        if (g >= 1 && g <= 6) dist[g - 1]++
     }
   }
 
@@ -80,10 +80,10 @@ export function LeaderboardModal({ open, onClose, username }: LeaderboardModalPr
       if (username && statsResult) {
         const results = (statsResult.data || []) as { guesses_count: number; won: boolean }[]
         const wins = results.filter((r) => r.won)
-        const dist = [0, 0, 0, 0, 0]
+        const dist = [0, 0, 0, 0, 0, 0]
         for (const r of wins) {
           const g = r.guesses_count
-          if (g >= 1 && g <= 5) dist[g - 1]++
+          if (g >= 1 && g <= 6) dist[g - 1]++
         }
         const { data: myRow } = await supabase.from("leaderboard").select("*").eq("username", username).single()
         setStats({

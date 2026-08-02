@@ -13,7 +13,7 @@ import { getWrongResponse, getCorrectResponse, getLostResponse } from "./utils/r
 import { supabase } from "./supabase/client"
 import { useAuth } from "./context/AuthContext"
 
-const MAX_GUESSES = 5
+const MAX_GUESSES = 6
 
 function todayStr(): string {
   const d = new Date()

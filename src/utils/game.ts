@@ -62,7 +62,7 @@ export function shareResult(guesses: string[], won: boolean, _videoTitle: string
   })
   const total = won ? guesses.length : "X"
   const lines = [
-    `Yapdle #${yapdleNumber} ${total}/5`,
+    `Yapdle #${yapdleNumber} ${total}/6`,
     "",
     emojis.join(""),
     "",
