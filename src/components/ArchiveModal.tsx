@@ -42,8 +42,8 @@ export function ArchiveModal({ open, onClose, onPlay, onBackToToday }: ArchiveMo
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4">
-      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-md w-full bounce-in shadow-2xl flex flex-col max-h-[80vh]">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm p-4" onClick={onClose}>
+      <div className="bg-yapdle-surface rounded-2xl border border-yapdle-border p-6 max-w-md w-full bounce-in shadow-2xl flex flex-col max-h-[80vh]" onClick={(e) => e.stopPropagation()}>
         <h2 className="text-xl font-bold text-yapdle-accent text-center mb-4 shrink-0">
           Archive
         </h2>
