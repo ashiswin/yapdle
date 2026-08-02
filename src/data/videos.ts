@@ -2,8 +2,11 @@ export interface Video {
   id: string
   title: string
   thumbnailId: string
+  added: string
 }
 
+// Append-only list sorted by added date. New videos get today's date.
+// Daily challenges use only videos with added <= the challenge date.
 const videos: Video[] = [
   { id: "v1", title: "Weirdo Gets Trapped in Porta Potty", thumbnailId: "2HQ1XWXPuCw" },
   { id: "v2", title: "Is The Odyssey Any Good", thumbnailId: "NfLNcmbvFVs" },

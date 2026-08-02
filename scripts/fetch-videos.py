@@ -1,28 +1,29 @@
 #!/usr/bin/env python3
-"""Fetch all penguinz0 video IDs and titles, regenerate src/data/videos.ts.
+"""Fetch penguinz0 video IDs/titles and update src/data/videos.ts.
 
-Usage: python3 scripts/fetch-videos.py
+New videos get today's date as their `added` field. Existing videos keep their
+original `added` date. The daily challenge uses only videos with `added <= date`,
+so past days are always stable — new videos only affect future days.
 """
 
 import json, urllib.request, ssl, re, sys, time, os
+from datetime import datetime, timezone
 
 ssl_ctx = ssl.create_default_context()
 ssl_ctx.check_hostname = False
 ssl_ctx.verify_mode = ssl.CERT_NONE
 
+TODAY = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+
+# ---------------------------------------------------------------------------
+# 1. Scrape video IDs
+# ---------------------------------------------------------------------------
 print("Fetching channel page...", file=sys.stderr)
 html = urllib.request.urlopen("https://www.youtube.com/@penguinz0/videos", context=ssl_ctx).read().decode()
 
 key_match = re.search(r'"INNERTUBE_API_KEY":"([^"]+)"', html)
-if not key_match:
-    print("ERROR: Could not find API key", file=sys.stderr)
-    sys.exit(1)
 api_key = key_match.group(1)
-
 ctx_match = re.search(r'"INNERTUBE_CONTEXT":({.*?}),"INNERTUBE_CONTEXT_CLIENT_NAME"', html)
-if not ctx_match:
-    print("ERROR: Could not find context", file=sys.stderr)
-    sys.exit(1)
 context = json.loads(ctx_match.group(1))
 
 def extract_video_ids(data):
@@ -63,66 +64,136 @@ def api_call(body):
     resp = urllib.request.urlopen(req, context=ssl_ctx)
     return json.loads(resp.read())
 
-# Get initial continuation token
 yt_match = re.search(r'var ytInitialData\s*=\s*({.*?});', html)
-if not yt_match:
-    print("ERROR: Could not find ytInitialData", file=sys.stderr)
-    sys.exit(1)
 yt = json.loads(yt_match.group(1))
 token = find_cont(yt)
 
 all_ids = []
 page = 1
-
-while token and page <= 20:
+while token and page <= 30:
     print(f"Page {page}...", file=sys.stderr)
     body = {"context": context, "continuation": token}
     result = api_call(body)
     ids = extract_video_ids(result)
     all_ids.extend(ids)
     all_ids = list(dict.fromkeys(all_ids))
-    print(f"  {len(ids)} new, {len(all_ids)} total", file=sys.stderr)
     token = find_cont(result)
     page += 1
     time.sleep(0.3)
 
-print(f"Total IDs: {len(all_ids)}", file=sys.stderr)
+print(f"Total IDs scraped: {len(all_ids)}", file=sys.stderr)
 
-# Fetch titles
-print("Fetching titles...", file=sys.stderr)
-results = []
-for i, vid in enumerate(all_ids):
+# ---------------------------------------------------------------------------
+# 2. Read existing data to preserve added dates
+# ---------------------------------------------------------------------------
+script_dir = os.path.dirname(os.path.abspath(__file__))
+output_path = os.path.join(script_dir, "..", "src", "data", "videos.ts")
+
+existing = {}  # thumbnailId -> {"title": str, "added": str}
+if os.path.exists(output_path):
+    with open(output_path) as f:
+        content = f.read()
+    for m in re.finditer(
+        r'\{\s*id:\s*"[^"]+",\s*title:\s*"((?:[^"\\]|\\.)*)",\s*thumbnailId:\s*"([^"]+)",\s*added:\s*"([^"]+)"\s*\}',
+        content
+    ):
+        title = m.group(1).replace('\\"', '"').replace("\\\\", "\\")
+        vid = m.group(2)
+        added = m.group(3)
+        existing[vid] = {"title": title, "added": added}
+
+# ---------------------------------------------------------------------------
+# 3. Fetch titles for NEW videos only
+# ---------------------------------------------------------------------------
+new_ids = [vid for vid in all_ids if vid not in existing]
+print(f"Existing: {len(existing)}, New to fetch: {len(new_ids)}", file=sys.stderr)
+
+for i, vid in enumerate(new_ids):
     try:
         url = f"https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v={vid}&format=json"
         req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         resp = urllib.request.urlopen(req, context=ssl_ctx)
         title = json.loads(resp.read())["title"]
-        results.append({"videoId": vid, "title": title})
+        existing[vid] = {"title": title, "added": TODAY}
         if (i + 1) % 50 == 0:
-            print(f"  {i + 1}/{len(all_ids)}", file=sys.stderr)
+            print(f"  {i + 1}/{len(new_ids)}", file=sys.stderr)
         time.sleep(0.05)
-    except:
-        pass
+    except Exception as e:
+        print(f"  Skip {vid}", file=sys.stderr)
 
-print(f"Done: {len(results)} videos with titles", file=sys.stderr)
+# ---------------------------------------------------------------------------
+# 4. Build ordered list: existing videos first (by original added date), then new
+# ---------------------------------------------------------------------------
+# Preserve order from existing file for stability
+old_order = []
+new_order = []
+if os.path.exists(output_path):
+    with open(output_path) as f:
+        content = f.read()
+    in_array = False
+    for line in content.split("\n"):
+        m = re.search(r'thumbnailId:\s*"([^"]+)"', line)
+        if m:
+            vid = m.group(1)
+            if vid in existing:
+                if vid in [v for v in old_order]:
+                    continue
+                old_order.append(vid)
 
-# Generate TypeScript file
-script_dir = os.path.dirname(os.path.abspath(__file__))
-output_path = os.path.join(script_dir, "..", "src", "data", "videos.ts")
+# Any existing not in old_order (shouldn't happen normally)
+for vid in old_order:
+    if vid not in existing:
+        existing[vid] = existing.get(vid, {"title": "Unknown", "added": "2026-07-28"})
+
+# New videos not in old_order
+for vid in existing:
+    if vid not in old_order:
+        new_order.append(vid)
+
+# Sort new videos by their added date (today)
+new_order.sort(key=lambda vid: existing[vid]["added"])
+
+# ---------------------------------------------------------------------------
+# 5. First run: all scraped videos get origin date
+# ---------------------------------------------------------------------------
+if not old_order and new_ids:
+    # First run - assign origin date to all
+    for vid in existing:
+        existing[vid]["added"] = "2026-07-28"
+    old_order = list(existing.keys())
+
+# ---------------------------------------------------------------------------
+# 6. Generate output
+# ---------------------------------------------------------------------------
+def escape_ts(s):
+    return s.replace("\\", "\\\\").replace('"', '\\"')
 
 lines = []
 lines.append("export interface Video {")
 lines.append("  id: string")
 lines.append("  title: string")
 lines.append("  thumbnailId: string")
+lines.append("  added: string")
 lines.append("}")
 lines.append("")
+lines.append("// Append-only list sorted by added date. New videos get today's date.")
+lines.append("// Daily challenges use only videos with added <= the challenge date.")
 lines.append("const videos: Video[] = [")
 
-for i, v in enumerate(results):
-    title = v["title"].replace("\\", "\\\\").replace('"', '\\"')
-    vid = v["videoId"]
-    lines.append(f'  {{ id: "v{i+1}", title: "{title}", thumbnailId: "{vid}" }},')
+counter = 1
+for vid in old_order:
+    entry = existing.get(vid, {"title": "Unknown", "added": "2026-07-28"})
+    title = escape_ts(entry["title"])
+    added = entry["added"]
+    lines.append(f'  {{ id: "v{counter}", title: "{title}", thumbnailId: "{vid}", added: "{added}" }},')
+    counter += 1
+
+for vid in new_order:
+    entry = existing[vid]
+    title = escape_ts(entry["title"])
+    added = entry["added"]
+    lines.append(f'  {{ id: "v{counter}", title: "{title}", thumbnailId: "{vid}", added: "{added}" }},')
+    counter += 1
 
 lines.append("]")
 lines.append("")
@@ -137,8 +208,18 @@ lines.append("")
 lines.append("export function getThumbnailUrl(thumbnailId: string): string {")
 lines.append('  return "https://i.ytimg.com/vi/" + thumbnailId + "/hqdefault.jpg"')
 lines.append("}")
+lines.append("")
+lines.append("export function getPoolSizeOnDate(dateStr: string): number {")
+lines.append("  let count = 0")
+lines.append("  for (const v of videos) {")
+lines.append("    if (v.added <= dateStr) count++")
+lines.append("    else break")
+lines.append("  }")
+lines.append("  return count")
+lines.append("}")
 
 with open(output_path, "w") as f:
     f.write("\n".join(lines) + "\n")
 
-print(f"Wrote {len(results)} videos to {output_path}", file=sys.stderr)
+total = len(old_order) + len(new_order)
+print(f"Wrote {len(old_order)} existing + {len(new_order)} new = {total} videos to {output_path}", file=sys.stderr)

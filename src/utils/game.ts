@@ -1,4 +1,4 @@
-import { getAllVideos } from "../data/videos"
+import { getAllVideos, getPoolSizeOnDate } from "../data/videos"
 import type { Video } from "../data/videos"
 
 function hashCode(str: string): number {
@@ -30,9 +30,11 @@ export function getDailySeed(dateStr?: string): number {
 }
 
 export function getDailyVideo(dateStr?: string): Video {
+  const str = dateStr || todayStr()
   const videos = getAllVideos()
-  const seed = getDailySeed(dateStr)
-  return videos[seed % videos.length]
+  const seed = getDailySeed(str)
+  const size = getPoolSizeOnDate(str)
+  return videos[seed % size]
 }
 
 export function getYapdleNumber(dateStr?: string): number {
