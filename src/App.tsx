@@ -5,9 +5,13 @@ import { GuessInput } from "./components/GuessInput"
 import { GuessList } from "./components/GuessList"
 import { ShareDialog } from "./components/ShareDialog"
 import { ArchiveModal } from "./components/ArchiveModal"
+import { AuthModal } from "./components/AuthModal"
+import { LeaderboardModal } from "./components/LeaderboardModal"
 import { getDailyVideo, getYapdleNumber, saveToArchive, updateStreak, getStreak } from "./utils/game"
 import type { GuessEntry } from "./utils/game"
 import { getWrongResponse, getCorrectResponse, getLostResponse } from "./utils/responses"
+import { supabase } from "./supabase/client"
+import { useAuth } from "./context/AuthContext"
 
 const MAX_GUESSES = 5
 
@@ -31,7 +35,10 @@ export default function App() {
   const [shake, setShake] = useState(false)
   const [showShare, setShowShare] = useState(false)
   const [showArchive, setShowArchive] = useState(false)
+  const [showAuth, setShowAuth] = useState(false)
+  const [showLeaderboard, setShowLeaderboard] = useState(false)
   const [streak, setStreak] = useState(getStreak())
+  const { user } = useAuth()
 
   const dailyVideo = getDailyVideo(playDate)
   const yapdleNumber = getYapdleNumber(playDate)
@@ -81,9 +88,19 @@ export default function App() {
       if (isToday) {
         updateStreak()
         setStreak(getStreak())
+        if (user) {
+          supabase.from("results").upsert({
+            user_id: user.id,
+            yapdle_number: yapdleNumber,
+            guesses_count: newGuesses.length,
+            won: didWin,
+          }, { onConflict: "user_id, yapdle_number" }).then(({ error }) => {
+            if (error) console.error("Failed to save result:", error)
+          })
+        }
       }
     },
-    [playDate, isToday]
+    [playDate, isToday, yapdleNumber, user]
   )
 
   const handleGuess = useCallback(
@@ -134,7 +151,12 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center">
-      <Header onArchive={() => setShowArchive(true)} />
+      <Header
+        onArchive={() => setShowArchive(true)}
+        onAuth={() => setShowAuth(true)}
+        onLeaderboard={() => setShowLeaderboard(true)}
+        user={user}
+      />
 
       <main className="flex-1 w-full max-w-2xl mx-auto px-4 py-6 flex flex-col items-center gap-5">
         {!isToday && (
@@ -229,6 +251,16 @@ export default function App() {
         onClose={() => setShowArchive(false)}
         onPlay={handlePlayDate}
         onBackToToday={handleBackToToday}
+      />
+
+      <AuthModal
+        open={showAuth}
+        onClose={() => setShowAuth(false)}
+      />
+
+      <LeaderboardModal
+        open={showLeaderboard}
+        onClose={() => setShowLeaderboard(false)}
       />
     </div>
   )

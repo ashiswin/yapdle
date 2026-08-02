@@ -1,12 +1,22 @@
+import type { User } from "@supabase/supabase-js"
+
 interface HeaderProps {
   onArchive: () => void
+  onAuth: () => void
+  onLeaderboard: () => void
+  user: User | null
 }
 
-export function Header({ onArchive }: HeaderProps) {
+export function Header({ onArchive, onAuth, onLeaderboard, user }: HeaderProps) {
   return (
     <header className="w-full py-4 border-b border-yapdle-border">
       <div className="flex items-center justify-between px-6">
-        <div />
+        <button
+          onClick={onLeaderboard}
+          className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
+        >
+          Leaderboard
+        </button>
         <div className="text-center">
           <h1 className="text-3xl font-bold tracking-wide text-yapdle-accent">
             Yapdle
@@ -15,12 +25,20 @@ export function Header({ onArchive }: HeaderProps) {
             Guess the penguinz0 video from its thumbnail
           </p>
         </div>
-        <button
-          onClick={onArchive}
-          className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
-        >
-          Archive
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={onAuth}
+            className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
+          >
+            {user ? user.email?.split("@")[0] : "Sign in"}
+          </button>
+          <button
+            onClick={onArchive}
+            className="text-yapdle-muted hover:text-yapdle-text transition-colors text-xs font-medium"
+          >
+            Archive
+          </button>
+        </div>
       </div>
     </header>
   )
