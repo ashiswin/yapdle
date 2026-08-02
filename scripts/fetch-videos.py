@@ -91,10 +91,23 @@ def api_call(body):
     return json.loads(resp.read())
 
 # ---------------------------------------------------------------------------
-# 3. Scrape pages until we hit known videos
+# 3. Scrape videos — start with the initial page, then paginate
 # ---------------------------------------------------------------------------
 yt_match = re.search(r'var ytInitialData\s*=\s*({.*?});', html)
 yt = json.loads(yt_match.group(1))
+
+new_ids = []
+
+# First: extract from the initial page (ytInitialData + inline videoIds)
+initial_ids = extract_video_ids(yt)
+html_ids = re.findall(r'"videoId":"([^"]+)"', html)
+for vid in html_ids + initial_ids:
+    if vid not in existing_ids and vid not in new_ids:
+        new_ids.append(vid)
+
+print(f"Initial page + HTML: {len(new_ids)} new videos", file=sys.stderr)
+
+# Then paginate via continuation tokens
 token = find_cont(yt)
 
 new_ids = []
