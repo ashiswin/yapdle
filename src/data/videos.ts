@@ -5,7 +5,8 @@ export interface Video {
   added: string
 }
 
-// Append-only list. Daily challenges use only videos with added <= date.
+// Append-only list sorted by added date. New videos get today's date.
+// Daily challenges use only videos with added <= the challenge date.
 const videos: Video[] = [
   { id: "v1", title: "I Tried Every Cook Out Menu Item and Don't Regret It", thumbnailId: "t6BZPos-y1c", added: "2026-07-28" },
   { id: "v2", title: "This Shouldn't Have Happened", thumbnailId: "awycPS2cCmk", added: "2026-07-28" },
@@ -3034,11 +3035,19 @@ const videos: Video[] = [
   { id: "v3025", title: "Cryptoland Is Embarrassing", thumbnailId: "MZzCyTRBfHo", added: "2026-07-28" },
   { id: "v3026", title: "Hottest Sandwich in the World", thumbnailId: "Iv9abokeibw", added: "2026-07-28" },
 ]
-export function getAllVideos(): Video[] { return videos }
-export function getAllTitles(): string[] { return videos.map((v) => v.title) }
+
+export function getAllVideos(): Video[] {
+  return videos
+}
+
+export function getAllTitles(): string[] {
+  return videos.map((v) => v.title)
+}
+
 export function getThumbnailUrl(thumbnailId: string): string {
   return "https://i.ytimg.com/vi/" + thumbnailId + "/hqdefault.jpg"
 }
+
 export function getPoolSizeOnDate(dateStr: string): number {
   let count = 0
   for (const v of videos) {
