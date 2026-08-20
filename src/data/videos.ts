@@ -3034,6 +3034,10 @@ const videos: Video[] = [
   { id: "v3024", title: "Pokimane Sued By Ninja", thumbnailId: "YkY15CXQj9Y", added: "2026-07-28" },
   { id: "v3025", title: "Cryptoland Is Embarrassing", thumbnailId: "MZzCyTRBfHo", added: "2026-07-28" },
   { id: "v3026", title: "Hottest Sandwich in the World", thumbnailId: "Iv9abokeibw", added: "2026-07-28" },
+  { id: "v3027", title: "I Really Hate Temu", thumbnailId: "mLc1Q88J4m0", added: "2026-08-20" },
+  { id: "v3028", title: "Weirdo Hates These Dumpsters", thumbnailId: "oduqJe84VC0", added: "2026-08-20" },
+  { id: "v3029", title: "I Really Hate Temu", thumbnailId: "mLc1Q88J4m0", added: "2026-08-20" },
+  { id: "v3030", title: "Weirdo Hates These Dumpsters", thumbnailId: "oduqJe84VC0", added: "2026-08-20" },
 ]
 
 export function getAllVideos(): Video[] {
