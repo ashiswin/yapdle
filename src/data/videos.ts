@@ -3036,8 +3036,10 @@ const videos: Video[] = [
   { id: "v3026", title: "Hottest Sandwich in the World", thumbnailId: "Iv9abokeibw", added: "2026-07-28" },
   { id: "v3027", title: "I Really Hate Temu", thumbnailId: "mLc1Q88J4m0", added: "2026-08-20" },
   { id: "v3028", title: "Weirdo Hates These Dumpsters", thumbnailId: "oduqJe84VC0", added: "2026-08-20" },
-  { id: "v3029", title: "I Really Hate Temu", thumbnailId: "mLc1Q88J4m0", added: "2026-08-20" },
-  { id: "v3030", title: "Weirdo Hates These Dumpsters", thumbnailId: "oduqJe84VC0", added: "2026-08-20" },
+  { id: "v3029", title: "Nude Dining Steakhouse is Weird", thumbnailId: "j6W3bxlAsJs", added: "2026-08-21" },
+  { id: "v3030", title: "Tony Romo Bodycam is Goofy", thumbnailId: "eIHH5e-ZsFo", added: "2026-08-21" },
+  { id: "v3031", title: "Tony Romo Bodycam is Goofy", thumbnailId: "eIHH5e-ZsFo", added: "2026-08-21" },
+  { id: "v3032", title: "Nude Dining Steakhouse is Weird", thumbnailId: "j6W3bxlAsJs", added: "2026-08-21" },
 ]
 
 export function getAllVideos(): Video[] {
