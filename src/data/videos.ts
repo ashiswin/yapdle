@@ -3038,8 +3038,10 @@ const videos: Video[] = [
   { id: "v3028", title: "Weirdo Hates These Dumpsters", thumbnailId: "oduqJe84VC0", added: "2026-08-20" },
   { id: "v3029", title: "Nude Dining Steakhouse is Weird", thumbnailId: "j6W3bxlAsJs", added: "2026-08-21" },
   { id: "v3030", title: "Tony Romo Bodycam is Goofy", thumbnailId: "eIHH5e-ZsFo", added: "2026-08-21" },
-  { id: "v3031", title: "Tony Romo Bodycam is Goofy", thumbnailId: "eIHH5e-ZsFo", added: "2026-08-21" },
-  { id: "v3032", title: "Nude Dining Steakhouse is Weird", thumbnailId: "j6W3bxlAsJs", added: "2026-08-21" },
+  { id: "v3031", title: "Roblox is Getting Gadooshed", thumbnailId: "UhvjJtC_GO0", added: "2026-08-22" },
+  { id: "v3032", title: "Perez Hilton Situation is Awful", thumbnailId: "EHSW-rxss7Q", added: "2026-08-22" },
+  { id: "v3033", title: "Perez Hilton Situation is Awful", thumbnailId: "EHSW-rxss7Q", added: "2026-08-22" },
+  { id: "v3034", title: "Roblox is Getting Gadooshed", thumbnailId: "UhvjJtC_GO0", added: "2026-08-22" },
 ]
 
 export function getAllVideos(): Video[] {
