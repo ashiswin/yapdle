@@ -3042,8 +3042,8 @@ const videos: Video[] = [
   { id: "v3032", title: "Perez Hilton Situation is Awful", thumbnailId: "EHSW-rxss7Q", added: "2026-08-22" },
   { id: "v3033", title: "It's a Little Sad", thumbnailId: "ipk8o-HftOc", added: "2026-08-23" },
   { id: "v3034", title: "Final Boss of Cop Larpers", thumbnailId: "JGxGfbPAG30", added: "2026-08-23" },
-  { id: "v3035", title: "Final Boss of Cop Larpers", thumbnailId: "JGxGfbPAG30", added: "2026-08-23" },
-  { id: "v3036", title: "It's a Little Sad", thumbnailId: "ipk8o-HftOc", added: "2026-08-23" },
+  { id: "v3035", title: "It's Just Annoying", thumbnailId: "w1SwQ7yRcdM", added: "2026-08-24" },
+  { id: "v3036", title: "It's Just Annoying", thumbnailId: "w1SwQ7yRcdM", added: "2026-08-24" },
 ]
 
 export function getAllVideos(): Video[] {
