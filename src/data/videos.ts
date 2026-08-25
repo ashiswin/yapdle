@@ -3043,7 +3043,10 @@ const videos: Video[] = [
   { id: "v3033", title: "It's a Little Sad", thumbnailId: "ipk8o-HftOc", added: "2026-08-23" },
   { id: "v3034", title: "Final Boss of Cop Larpers", thumbnailId: "JGxGfbPAG30", added: "2026-08-23" },
   { id: "v3035", title: "It's Just Annoying", thumbnailId: "w1SwQ7yRcdM", added: "2026-08-24" },
-  { id: "v3036", title: "It's Just Annoying", thumbnailId: "w1SwQ7yRcdM", added: "2026-08-24" },
+  { id: "v3036", title: "Youtube Shadowbanning Situation is Crazy", thumbnailId: "ofzzFL-yUQs", added: "2026-08-25" },
+  { id: "v3037", title: "Yesterday I Was Attacked", thumbnailId: "rNUPbdv1oOo", added: "2026-08-25" },
+  { id: "v3038", title: "Youtube Shadowbanning Situation is Crazy", thumbnailId: "ofzzFL-yUQs", added: "2026-08-25" },
+  { id: "v3039", title: "Yesterday I Was Attacked", thumbnailId: "rNUPbdv1oOo", added: "2026-08-25" },
 ]
 
 export function getAllVideos(): Video[] {
