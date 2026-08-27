@@ -3046,7 +3046,10 @@ const videos: Video[] = [
   { id: "v3036", title: "Youtube Shadowbanning Situation is Crazy", thumbnailId: "ofzzFL-yUQs", added: "2026-08-25" },
   { id: "v3037", title: "Yesterday I Was Attacked", thumbnailId: "rNUPbdv1oOo", added: "2026-08-25" },
   { id: "v3038", title: "How to Ruin Excitement for Your Movie", thumbnailId: "3vwLN-8Br5Q", added: "2026-08-26" },
-  { id: "v3039", title: "How to Ruin Excitement for Your Movie", thumbnailId: "3vwLN-8Br5Q", added: "2026-08-26" },
+  { id: "v3039", title: "Diarrhea Supplier Has to Recall More Products", thumbnailId: "P66CSx3MeHE", added: "2026-08-27" },
+  { id: "v3040", title: "Full EDP445 Documentary Just Dropped", thumbnailId: "swDVK7E1oME", added: "2026-08-27" },
+  { id: "v3041", title: "Diarrhea Supplier Has to Recall More Products", thumbnailId: "P66CSx3MeHE", added: "2026-08-27" },
+  { id: "v3042", title: "Full EDP445 Documentary Just Dropped", thumbnailId: "swDVK7E1oME", added: "2026-08-27" },
 ]
 
 export function getAllVideos(): Video[] {
