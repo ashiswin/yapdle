@@ -3048,8 +3048,10 @@ const videos: Video[] = [
   { id: "v3038", title: "How to Ruin Excitement for Your Movie", thumbnailId: "3vwLN-8Br5Q", added: "2026-08-26" },
   { id: "v3039", title: "Diarrhea Supplier Has to Recall More Products", thumbnailId: "P66CSx3MeHE", added: "2026-08-27" },
   { id: "v3040", title: "Full EDP445 Documentary Just Dropped", thumbnailId: "swDVK7E1oME", added: "2026-08-27" },
-  { id: "v3041", title: "Diarrhea Supplier Has to Recall More Products", thumbnailId: "P66CSx3MeHE", added: "2026-08-27" },
-  { id: "v3042", title: "Full EDP445 Documentary Just Dropped", thumbnailId: "swDVK7E1oME", added: "2026-08-27" },
+  { id: "v3041", title: "Insomnia Cure Tier List", thumbnailId: "op6w3c3lbGc", added: "2026-08-28" },
+  { id: "v3042", title: "Huge Youtube Monetization Change", thumbnailId: "wqHvj2PLTQk", added: "2026-08-28" },
+  { id: "v3043", title: "Insomnia Cure Tier List", thumbnailId: "op6w3c3lbGc", added: "2026-08-28" },
+  { id: "v3044", title: "Huge Youtube Monetization Change", thumbnailId: "wqHvj2PLTQk", added: "2026-08-28" },
 ]
 
 export function getAllVideos(): Video[] {
