@@ -3050,8 +3050,10 @@ const videos: Video[] = [
   { id: "v3040", title: "Full EDP445 Documentary Just Dropped", thumbnailId: "swDVK7E1oME", added: "2026-08-27" },
   { id: "v3041", title: "Insomnia Cure Tier List", thumbnailId: "op6w3c3lbGc", added: "2026-08-28" },
   { id: "v3042", title: "Huge Youtube Monetization Change", thumbnailId: "wqHvj2PLTQk", added: "2026-08-28" },
-  { id: "v3043", title: "Insomnia Cure Tier List", thumbnailId: "op6w3c3lbGc", added: "2026-08-28" },
-  { id: "v3044", title: "Huge Youtube Monetization Change", thumbnailId: "wqHvj2PLTQk", added: "2026-08-28" },
+  { id: "v3043", title: "Honey Situation is Getting Wild", thumbnailId: "bJqJbX1Wk8g", added: "2026-08-29" },
+  { id: "v3044", title: "This Trash Must Be Clowned On", thumbnailId: "5vFZyCIRmPs", added: "2026-08-29" },
+  { id: "v3045", title: "This Trash Must Be Clowned On", thumbnailId: "5vFZyCIRmPs", added: "2026-08-29" },
+  { id: "v3046", title: "Honey Situation is Getting Wild", thumbnailId: "bJqJbX1Wk8g", added: "2026-08-29" },
 ]
 
 export function getAllVideos(): Video[] {
