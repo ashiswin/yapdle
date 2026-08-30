@@ -3052,8 +3052,10 @@ const videos: Video[] = [
   { id: "v3042", title: "Huge Youtube Monetization Change", thumbnailId: "wqHvj2PLTQk", added: "2026-08-28" },
   { id: "v3043", title: "Honey Situation is Getting Wild", thumbnailId: "bJqJbX1Wk8g", added: "2026-08-29" },
   { id: "v3044", title: "This Trash Must Be Clowned On", thumbnailId: "5vFZyCIRmPs", added: "2026-08-29" },
-  { id: "v3045", title: "This Trash Must Be Clowned On", thumbnailId: "5vFZyCIRmPs", added: "2026-08-29" },
-  { id: "v3046", title: "Honey Situation is Getting Wild", thumbnailId: "bJqJbX1Wk8g", added: "2026-08-29" },
+  { id: "v3045", title: "Worst Album of the Decade", thumbnailId: "H0P48WDtUTo", added: "2026-08-30" },
+  { id: "v3046", title: "What Happened to Liquid Death", thumbnailId: "q29hGtqaBPE", added: "2026-08-30" },
+  { id: "v3047", title: "Worst Album of the Decade", thumbnailId: "H0P48WDtUTo", added: "2026-08-30" },
+  { id: "v3048", title: "What Happened to Liquid Death", thumbnailId: "q29hGtqaBPE", added: "2026-08-30" },
 ]
 
 export function getAllVideos(): Video[] {
