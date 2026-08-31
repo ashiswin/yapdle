@@ -3054,8 +3054,10 @@ const videos: Video[] = [
   { id: "v3044", title: "This Trash Must Be Clowned On", thumbnailId: "5vFZyCIRmPs", added: "2026-08-29" },
   { id: "v3045", title: "Worst Album of the Decade", thumbnailId: "H0P48WDtUTo", added: "2026-08-30" },
   { id: "v3046", title: "What Happened to Liquid Death", thumbnailId: "q29hGtqaBPE", added: "2026-08-30" },
-  { id: "v3047", title: "Worst Album of the Decade", thumbnailId: "H0P48WDtUTo", added: "2026-08-30" },
-  { id: "v3048", title: "What Happened to Liquid Death", thumbnailId: "q29hGtqaBPE", added: "2026-08-30" },
+  { id: "v3047", title: "Groundbreaking New Alien Information", thumbnailId: "cfdTDZzFPso", added: "2026-08-31" },
+  { id: "v3048", title: "He Sucks", thumbnailId: "Q5tJUxtjl1M", added: "2026-08-31" },
+  { id: "v3049", title: "He Sucks", thumbnailId: "Q5tJUxtjl1M", added: "2026-08-31" },
+  { id: "v3050", title: "Groundbreaking New Alien Information", thumbnailId: "cfdTDZzFPso", added: "2026-08-31" },
 ]
 
 export function getAllVideos(): Video[] {
