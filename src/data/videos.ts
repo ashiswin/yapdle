@@ -3056,8 +3056,10 @@ const videos: Video[] = [
   { id: "v3046", title: "What Happened to Liquid Death", thumbnailId: "q29hGtqaBPE", added: "2026-08-30" },
   { id: "v3047", title: "Groundbreaking New Alien Information", thumbnailId: "cfdTDZzFPso", added: "2026-08-31" },
   { id: "v3048", title: "He Sucks", thumbnailId: "Q5tJUxtjl1M", added: "2026-08-31" },
-  { id: "v3049", title: "He Sucks", thumbnailId: "Q5tJUxtjl1M", added: "2026-08-31" },
-  { id: "v3050", title: "Groundbreaking New Alien Information", thumbnailId: "cfdTDZzFPso", added: "2026-08-31" },
+  { id: "v3049", title: "Cake Pop Drama is Wild", thumbnailId: "N3XZOEj9xQw", added: "2026-09-01" },
+  { id: "v3050", title: "Another Supergirl Disaster", thumbnailId: "srvAV7fa49M", added: "2026-09-01" },
+  { id: "v3051", title: "Cake Pop Drama is Wild", thumbnailId: "N3XZOEj9xQw", added: "2026-09-01" },
+  { id: "v3052", title: "Another Supergirl Disaster", thumbnailId: "srvAV7fa49M", added: "2026-09-01" },
 ]
 
 export function getAllVideos(): Video[] {
