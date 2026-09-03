@@ -3059,7 +3059,10 @@ const videos: Video[] = [
   { id: "v3049", title: "Cake Pop Drama is Wild", thumbnailId: "N3XZOEj9xQw", added: "2026-09-01" },
   { id: "v3050", title: "Another Supergirl Disaster", thumbnailId: "srvAV7fa49M", added: "2026-09-01" },
   { id: "v3051", title: "Crazy Incompetence", thumbnailId: "L7rMMAZrMoM", added: "2026-09-02" },
-  { id: "v3052", title: "Crazy Incompetence", thumbnailId: "L7rMMAZrMoM", added: "2026-09-02" },
+  { id: "v3052", title: "I Can't Believe They Streamed This", thumbnailId: "1OYU38dGlBI", added: "2026-09-03" },
+  { id: "v3053", title: "New Twitch AI Garbage", thumbnailId: "sok9mDbrAZA", added: "2026-09-03" },
+  { id: "v3054", title: "I Can't Believe They Streamed This", thumbnailId: "1OYU38dGlBI", added: "2026-09-03" },
+  { id: "v3055", title: "New Twitch AI Garbage", thumbnailId: "sok9mDbrAZA", added: "2026-09-03" },
 ]
 
 export function getAllVideos(): Video[] {
