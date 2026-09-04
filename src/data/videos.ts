@@ -3061,8 +3061,10 @@ const videos: Video[] = [
   { id: "v3051", title: "Crazy Incompetence", thumbnailId: "L7rMMAZrMoM", added: "2026-09-02" },
   { id: "v3052", title: "I Can't Believe They Streamed This", thumbnailId: "1OYU38dGlBI", added: "2026-09-03" },
   { id: "v3053", title: "New Twitch AI Garbage", thumbnailId: "sok9mDbrAZA", added: "2026-09-03" },
-  { id: "v3054", title: "I Can't Believe They Streamed This", thumbnailId: "1OYU38dGlBI", added: "2026-09-03" },
-  { id: "v3055", title: "New Twitch AI Garbage", thumbnailId: "sok9mDbrAZA", added: "2026-09-03" },
+  { id: "v3054", title: "It's Infecting Everything", thumbnailId: "LBTYMzwCyQg", added: "2026-09-04" },
+  { id: "v3055", title: "Wow", thumbnailId: "VcvDEwK5f1A", added: "2026-09-04" },
+  { id: "v3056", title: "It's Infecting Everything", thumbnailId: "LBTYMzwCyQg", added: "2026-09-04" },
+  { id: "v3057", title: "Wow", thumbnailId: "VcvDEwK5f1A", added: "2026-09-04" },
 ]
 
 export function getAllVideos(): Video[] {
