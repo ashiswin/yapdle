@@ -3063,8 +3063,10 @@ const videos: Video[] = [
   { id: "v3053", title: "New Twitch AI Garbage", thumbnailId: "sok9mDbrAZA", added: "2026-09-03" },
   { id: "v3054", title: "It's Infecting Everything", thumbnailId: "LBTYMzwCyQg", added: "2026-09-04" },
   { id: "v3055", title: "Wow", thumbnailId: "VcvDEwK5f1A", added: "2026-09-04" },
-  { id: "v3056", title: "It's Infecting Everything", thumbnailId: "LBTYMzwCyQg", added: "2026-09-04" },
-  { id: "v3057", title: "Wow", thumbnailId: "VcvDEwK5f1A", added: "2026-09-04" },
+  { id: "v3056", title: "Wild KPop Demon Hunters Lawsuit", thumbnailId: "aB4Xkyrybvc", added: "2026-09-05" },
+  { id: "v3057", title: "Another Wild GTA 6 Leak Just Happened", thumbnailId: "QkMU8vK117s", added: "2026-09-05" },
+  { id: "v3058", title: "Another Wild GTA 6 Leak Just Happened", thumbnailId: "QkMU8vK117s", added: "2026-09-05" },
+  { id: "v3059", title: "Wild KPop Demon Hunters Lawsuit", thumbnailId: "aB4Xkyrybvc", added: "2026-09-05" },
 ]
 
 export function getAllVideos(): Video[] {
