@@ -3065,8 +3065,8 @@ const videos: Video[] = [
   { id: "v3055", title: "Wow", thumbnailId: "VcvDEwK5f1A", added: "2026-09-04" },
   { id: "v3056", title: "Wild KPop Demon Hunters Lawsuit", thumbnailId: "aB4Xkyrybvc", added: "2026-09-05" },
   { id: "v3057", title: "Another Wild GTA 6 Leak Just Happened", thumbnailId: "QkMU8vK117s", added: "2026-09-05" },
-  { id: "v3058", title: "Another Wild GTA 6 Leak Just Happened", thumbnailId: "QkMU8vK117s", added: "2026-09-05" },
-  { id: "v3059", title: "Wild KPop Demon Hunters Lawsuit", thumbnailId: "aB4Xkyrybvc", added: "2026-09-05" },
+  { id: "v3058", title: "The Concord Curse Continues", thumbnailId: "hUbWEov8GaY", added: "2026-09-06" },
+  { id: "v3059", title: "The Concord Curse Continues", thumbnailId: "hUbWEov8GaY", added: "2026-09-06" },
 ]
 
 export function getAllVideos(): Video[] {
