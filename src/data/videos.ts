@@ -3066,7 +3066,10 @@ const videos: Video[] = [
   { id: "v3056", title: "Wild KPop Demon Hunters Lawsuit", thumbnailId: "aB4Xkyrybvc", added: "2026-09-05" },
   { id: "v3057", title: "Another Wild GTA 6 Leak Just Happened", thumbnailId: "QkMU8vK117s", added: "2026-09-05" },
   { id: "v3058", title: "The Concord Curse Continues", thumbnailId: "hUbWEov8GaY", added: "2026-09-06" },
-  { id: "v3059", title: "The Concord Curse Continues", thumbnailId: "hUbWEov8GaY", added: "2026-09-06" },
+  { id: "v3059", title: "I Really Expected to Hate This", thumbnailId: "kaaxGgc1kYQ", added: "2026-09-07" },
+  { id: "v3060", title: "LEGO Scandal Resolution is Being Reached", thumbnailId: "yLQY-NaJpIA", added: "2026-09-07" },
+  { id: "v3061", title: "I Really Expected to Hate This", thumbnailId: "kaaxGgc1kYQ", added: "2026-09-07" },
+  { id: "v3062", title: "LEGO Scandal Resolution is Being Reached", thumbnailId: "yLQY-NaJpIA", added: "2026-09-07" },
 ]
 
 export function getAllVideos(): Video[] {
