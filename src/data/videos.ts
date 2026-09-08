@@ -3068,8 +3068,10 @@ const videos: Video[] = [
   { id: "v3058", title: "The Concord Curse Continues", thumbnailId: "hUbWEov8GaY", added: "2026-09-06" },
   { id: "v3059", title: "I Really Expected to Hate This", thumbnailId: "kaaxGgc1kYQ", added: "2026-09-07" },
   { id: "v3060", title: "LEGO Scandal Resolution is Being Reached", thumbnailId: "yLQY-NaJpIA", added: "2026-09-07" },
-  { id: "v3061", title: "I Really Expected to Hate This", thumbnailId: "kaaxGgc1kYQ", added: "2026-09-07" },
-  { id: "v3062", title: "LEGO Scandal Resolution is Being Reached", thumbnailId: "yLQY-NaJpIA", added: "2026-09-07" },
+  { id: "v3061", title: "I Know I'm Late Yapping About This Show", thumbnailId: "Lhxs33hTaF0", added: "2026-09-08" },
+  { id: "v3062", title: "Worst Mom Ever Seen on Twitch", thumbnailId: "cyXWyEIn4Kk", added: "2026-09-08" },
+  { id: "v3063", title: "I Know I'm Late Yapping About This Show", thumbnailId: "Lhxs33hTaF0", added: "2026-09-08" },
+  { id: "v3064", title: "Worst Mom Ever Seen on Twitch", thumbnailId: "cyXWyEIn4Kk", added: "2026-09-08" },
 ]
 
 export function getAllVideos(): Video[] {
