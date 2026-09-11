@@ -3074,8 +3074,10 @@ const videos: Video[] = [
   { id: "v3064", title: "There's a Maniac on the Loose", thumbnailId: "pYFIXO1JhP4", added: "2026-09-09" },
   { id: "v3065", title: "Big Brain Chase Strategy", thumbnailId: "FaoS5OSUI-Q", added: "2026-09-10" },
   { id: "v3066", title: "Wildest Fake Cop Yet", thumbnailId: "s0b1G7nt4lU", added: "2026-09-10" },
-  { id: "v3067", title: "Big Brain Chase Strategy", thumbnailId: "FaoS5OSUI-Q", added: "2026-09-10" },
-  { id: "v3068", title: "Wildest Fake Cop Yet", thumbnailId: "s0b1G7nt4lU", added: "2026-09-10" },
+  { id: "v3067", title: "Few Things Make Me This Happy", thumbnailId: "fpJE18_oPiY", added: "2026-09-11" },
+  { id: "v3068", title: "Not Surprised At All", thumbnailId: "mPqdOSeBHbs", added: "2026-09-11" },
+  { id: "v3069", title: "Few Things Make Me This Happy", thumbnailId: "fpJE18_oPiY", added: "2026-09-11" },
+  { id: "v3070", title: "Not Surprised At All", thumbnailId: "mPqdOSeBHbs", added: "2026-09-11" },
 ]
 
 export function getAllVideos(): Video[] {
