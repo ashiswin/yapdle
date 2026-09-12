@@ -3076,8 +3076,10 @@ const videos: Video[] = [
   { id: "v3066", title: "Wildest Fake Cop Yet", thumbnailId: "s0b1G7nt4lU", added: "2026-09-10" },
   { id: "v3067", title: "Few Things Make Me This Happy", thumbnailId: "fpJE18_oPiY", added: "2026-09-11" },
   { id: "v3068", title: "Not Surprised At All", thumbnailId: "mPqdOSeBHbs", added: "2026-09-11" },
-  { id: "v3069", title: "Few Things Make Me This Happy", thumbnailId: "fpJE18_oPiY", added: "2026-09-11" },
-  { id: "v3070", title: "Not Surprised At All", thumbnailId: "mPqdOSeBHbs", added: "2026-09-11" },
+  { id: "v3069", title: "Rockstar Addressed the Leaks", thumbnailId: "sgmHBMQeRjI", added: "2026-09-12" },
+  { id: "v3070", title: "Criticize Him and Get Sued Instantly", thumbnailId: "xcHZJ-jKT5M", added: "2026-09-12" },
+  { id: "v3071", title: "Rockstar Addressed the Leaks", thumbnailId: "sgmHBMQeRjI", added: "2026-09-12" },
+  { id: "v3072", title: "Criticize Him and Get Sued Instantly", thumbnailId: "xcHZJ-jKT5M", added: "2026-09-12" },
 ]
 
 export function getAllVideos(): Video[] {
