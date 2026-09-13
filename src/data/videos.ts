@@ -3078,8 +3078,10 @@ const videos: Video[] = [
   { id: "v3068", title: "Not Surprised At All", thumbnailId: "mPqdOSeBHbs", added: "2026-09-11" },
   { id: "v3069", title: "Rockstar Addressed the Leaks", thumbnailId: "sgmHBMQeRjI", added: "2026-09-12" },
   { id: "v3070", title: "Criticize Him and Get Sued Instantly", thumbnailId: "xcHZJ-jKT5M", added: "2026-09-12" },
-  { id: "v3071", title: "Rockstar Addressed the Leaks", thumbnailId: "sgmHBMQeRjI", added: "2026-09-12" },
-  { id: "v3072", title: "Criticize Him and Get Sued Instantly", thumbnailId: "xcHZJ-jKT5M", added: "2026-09-12" },
+  { id: "v3071", title: "Thoughts on the GTA 6 Gameplay Reveal", thumbnailId: "b-If5Nq0log", added: "2026-09-13" },
+  { id: "v3072", title: "Catching Up on Huge Blunders", thumbnailId: "VapYUDB9HN4", added: "2026-09-13" },
+  { id: "v3073", title: "Catching Up on Huge Blunders", thumbnailId: "VapYUDB9HN4", added: "2026-09-13" },
+  { id: "v3074", title: "Thoughts on the GTA 6 Gameplay Reveal", thumbnailId: "b-If5Nq0log", added: "2026-09-13" },
 ]
 
 export function getAllVideos(): Video[] {
