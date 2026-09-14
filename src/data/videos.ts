@@ -3080,8 +3080,10 @@ const videos: Video[] = [
   { id: "v3070", title: "Criticize Him and Get Sued Instantly", thumbnailId: "xcHZJ-jKT5M", added: "2026-09-12" },
   { id: "v3071", title: "Thoughts on the GTA 6 Gameplay Reveal", thumbnailId: "b-If5Nq0log", added: "2026-09-13" },
   { id: "v3072", title: "Catching Up on Huge Blunders", thumbnailId: "VapYUDB9HN4", added: "2026-09-13" },
-  { id: "v3073", title: "Catching Up on Huge Blunders", thumbnailId: "VapYUDB9HN4", added: "2026-09-13" },
-  { id: "v3074", title: "Thoughts on the GTA 6 Gameplay Reveal", thumbnailId: "b-If5Nq0log", added: "2026-09-13" },
+  { id: "v3073", title: "Call of Duty Posting IRL Legal Killcams", thumbnailId: "kmooOOrOIK8", added: "2026-09-14" },
+  { id: "v3074", title: "Good Good Situation is Crazy", thumbnailId: "6bg9T_nUQsQ", added: "2026-09-14" },
+  { id: "v3075", title: "Good Good Situation is Crazy", thumbnailId: "6bg9T_nUQsQ", added: "2026-09-14" },
+  { id: "v3076", title: "Call of Duty Posting IRL Legal Killcams", thumbnailId: "kmooOOrOIK8", added: "2026-09-14" },
 ]
 
 export function getAllVideos(): Video[] {
