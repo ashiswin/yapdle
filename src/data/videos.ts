@@ -3082,8 +3082,10 @@ const videos: Video[] = [
   { id: "v3072", title: "Catching Up on Huge Blunders", thumbnailId: "VapYUDB9HN4", added: "2026-09-13" },
   { id: "v3073", title: "Call of Duty Posting IRL Legal Killcams", thumbnailId: "kmooOOrOIK8", added: "2026-09-14" },
   { id: "v3074", title: "Good Good Situation is Crazy", thumbnailId: "6bg9T_nUQsQ", added: "2026-09-14" },
-  { id: "v3075", title: "Good Good Situation is Crazy", thumbnailId: "6bg9T_nUQsQ", added: "2026-09-14" },
-  { id: "v3076", title: "Call of Duty Posting IRL Legal Killcams", thumbnailId: "kmooOOrOIK8", added: "2026-09-14" },
+  { id: "v3075", title: "The Leaks May Be Over", thumbnailId: "_y28oWye8J4", added: "2026-09-15" },
+  { id: "v3076", title: "Humiliation Ritual Continues", thumbnailId: "Tfh36ncNZFU", added: "2026-09-15" },
+  { id: "v3077", title: "Humiliation Ritual Continues", thumbnailId: "Tfh36ncNZFU", added: "2026-09-15" },
+  { id: "v3078", title: "The Leaks May Be Over", thumbnailId: "_y28oWye8J4", added: "2026-09-15" },
 ]
 
 export function getAllVideos(): Video[] {
