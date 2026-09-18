@@ -3087,8 +3087,10 @@ const videos: Video[] = [
   { id: "v3077", title: "I Learned Cheerleading", thumbnailId: "4r1zuNkm_Tc", added: "2026-09-16" },
   { id: "v3078", title: "Somehow He Returned", thumbnailId: "EdFnS1expyg", added: "2026-09-17" },
   { id: "v3079", title: "Youtube Needs to Take This Scam Seriously", thumbnailId: "Z4SXUkRq92M", added: "2026-09-17" },
-  { id: "v3080", title: "Somehow He Returned", thumbnailId: "EdFnS1expyg", added: "2026-09-17" },
-  { id: "v3081", title: "Youtube Needs to Take This Scam Seriously", thumbnailId: "Z4SXUkRq92M", added: "2026-09-17" },
+  { id: "v3080", title: "Pathetic Coward", thumbnailId: "JAu8jrbgWYU", added: "2026-09-18" },
+  { id: "v3081", title: "What is the Bandage Hiding", thumbnailId: "oLxenW__raE", added: "2026-09-18" },
+  { id: "v3082", title: "Pathetic Coward", thumbnailId: "JAu8jrbgWYU", added: "2026-09-18" },
+  { id: "v3083", title: "What is the Bandage Hiding", thumbnailId: "oLxenW__raE", added: "2026-09-18" },
 ]
 
 export function getAllVideos(): Video[] {
