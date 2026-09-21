@@ -3093,8 +3093,10 @@ const videos: Video[] = [
   { id: "v3083", title: "He's Back Again", thumbnailId: "50woKj6o6Ik", added: "2026-09-19" },
   { id: "v3084", title: "I Ranked All 11 Grand Theft Auto Games", thumbnailId: "mnaT4AqVj8k", added: "2026-09-20" },
   { id: "v3085", title: "No One Can Stop It Now", thumbnailId: "gZNUir5_mQU", added: "2026-09-20" },
-  { id: "v3086", title: "No One Can Stop It Now", thumbnailId: "gZNUir5_mQU", added: "2026-09-20" },
-  { id: "v3087", title: "I Ranked All 11 Grand Theft Auto Games", thumbnailId: "mnaT4AqVj8k", added: "2026-09-20" },
+  { id: "v3086", title: "Terrible Hikers", thumbnailId: "JJnvCXUCLx0", added: "2026-09-21" },
+  { id: "v3087", title: "Worst Movie of the Year Just Dropped", thumbnailId: "L55AxCnyQxc", added: "2026-09-21" },
+  { id: "v3088", title: "Terrible Hikers", thumbnailId: "JJnvCXUCLx0", added: "2026-09-21" },
+  { id: "v3089", title: "Worst Movie of the Year Just Dropped", thumbnailId: "L55AxCnyQxc", added: "2026-09-21" },
 ]
 
 export function getAllVideos(): Video[] {
