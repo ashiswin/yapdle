@@ -3095,8 +3095,10 @@ const videos: Video[] = [
   { id: "v3085", title: "No One Can Stop It Now", thumbnailId: "gZNUir5_mQU", added: "2026-09-20" },
   { id: "v3086", title: "Terrible Hikers", thumbnailId: "JJnvCXUCLx0", added: "2026-09-21" },
   { id: "v3087", title: "Worst Movie of the Year Just Dropped", thumbnailId: "L55AxCnyQxc", added: "2026-09-21" },
-  { id: "v3088", title: "Terrible Hikers", thumbnailId: "JJnvCXUCLx0", added: "2026-09-21" },
-  { id: "v3089", title: "Worst Movie of the Year Just Dropped", thumbnailId: "L55AxCnyQxc", added: "2026-09-21" },
+  { id: "v3088", title: "Horrible Coward Has Been Identified", thumbnailId: "pkthkYMbaas", added: "2026-09-22" },
+  { id: "v3089", title: "Disgusting Freak Should Be Arrested", thumbnailId: "Efmq4AkXXj8", added: "2026-09-22" },
+  { id: "v3090", title: "Disgusting Freak Should Be Arrested", thumbnailId: "Efmq4AkXXj8", added: "2026-09-22" },
+  { id: "v3091", title: "Horrible Coward Has Been Identified", thumbnailId: "pkthkYMbaas", added: "2026-09-22" },
 ]
 
 export function getAllVideos(): Video[] {
