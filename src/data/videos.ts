@@ -3097,8 +3097,10 @@ const videos: Video[] = [
   { id: "v3087", title: "Worst Movie of the Year Just Dropped", thumbnailId: "L55AxCnyQxc", added: "2026-09-21" },
   { id: "v3088", title: "Horrible Coward Has Been Identified", thumbnailId: "pkthkYMbaas", added: "2026-09-22" },
   { id: "v3089", title: "Disgusting Freak Should Be Arrested", thumbnailId: "Efmq4AkXXj8", added: "2026-09-22" },
-  { id: "v3090", title: "Disgusting Freak Should Be Arrested", thumbnailId: "Efmq4AkXXj8", added: "2026-09-22" },
-  { id: "v3091", title: "Horrible Coward Has Been Identified", thumbnailId: "pkthkYMbaas", added: "2026-09-22" },
+  { id: "v3090", title: "Huge Copyright Strike Situation", thumbnailId: "0BI5mG3FLLs", added: "2026-09-23" },
+  { id: "v3091", title: "Extremely Drunk Driver Goes Crazy in a Parking Lot", thumbnailId: "eD7NvStrD2I", added: "2026-09-23" },
+  { id: "v3092", title: "Huge Copyright Strike Situation", thumbnailId: "0BI5mG3FLLs", added: "2026-09-23" },
+  { id: "v3093", title: "Extremely Drunk Driver Goes Crazy in a Parking Lot", thumbnailId: "eD7NvStrD2I", added: "2026-09-23" },
 ]
 
 export function getAllVideos(): Video[] {
