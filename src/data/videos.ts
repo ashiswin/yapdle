@@ -3100,7 +3100,10 @@ const videos: Video[] = [
   { id: "v3090", title: "Huge Copyright Strike Situation", thumbnailId: "0BI5mG3FLLs", added: "2026-09-23" },
   { id: "v3091", title: "Extremely Drunk Driver Goes Crazy in a Parking Lot", thumbnailId: "eD7NvStrD2I", added: "2026-09-23" },
   { id: "v3092", title: "Replacing Yourself with AI is Stupid", thumbnailId: "Kw7bn9cvl7k", added: "2026-09-24" },
-  { id: "v3093", title: "Replacing Yourself with AI is Stupid", thumbnailId: "Kw7bn9cvl7k", added: "2026-09-24" },
+  { id: "v3093", title: "No Way", thumbnailId: "OeXxqSaH1zg", added: "2026-09-25" },
+  { id: "v3094", title: "Crazy Larper Scammed $1.3 Million from Victims", thumbnailId: "FjpQufWArfI", added: "2026-09-25" },
+  { id: "v3095", title: "Crazy Larper Scammed $1.3 Million from Victims", thumbnailId: "FjpQufWArfI", added: "2026-09-25" },
+  { id: "v3096", title: "No Way", thumbnailId: "OeXxqSaH1zg", added: "2026-09-25" },
 ]
 
 export function getAllVideos(): Video[] {
