@@ -3102,8 +3102,10 @@ const videos: Video[] = [
   { id: "v3092", title: "Replacing Yourself with AI is Stupid", thumbnailId: "Kw7bn9cvl7k", added: "2026-09-24" },
   { id: "v3093", title: "No Way", thumbnailId: "OeXxqSaH1zg", added: "2026-09-25" },
   { id: "v3094", title: "Crazy Larper Scammed $1.3 Million from Victims", thumbnailId: "FjpQufWArfI", added: "2026-09-25" },
-  { id: "v3095", title: "Crazy Larper Scammed $1.3 Million from Victims", thumbnailId: "FjpQufWArfI", added: "2026-09-25" },
-  { id: "v3096", title: "No Way", thumbnailId: "OeXxqSaH1zg", added: "2026-09-25" },
+  { id: "v3095", title: "He's Aware", thumbnailId: "0RjF0y5MpsU", added: "2026-09-26" },
+  { id: "v3096", title: "Fastest Scam Ever", thumbnailId: "JYPUUQhBhXg", added: "2026-09-26" },
+  { id: "v3097", title: "He's Aware", thumbnailId: "0RjF0y5MpsU", added: "2026-09-26" },
+  { id: "v3098", title: "Fastest Scam Ever", thumbnailId: "JYPUUQhBhXg", added: "2026-09-26" },
 ]
 
 export function getAllVideos(): Video[] {
