@@ -3104,8 +3104,10 @@ const videos: Video[] = [
   { id: "v3094", title: "Crazy Larper Scammed $1.3 Million from Victims", thumbnailId: "FjpQufWArfI", added: "2026-09-25" },
   { id: "v3095", title: "He's Aware", thumbnailId: "0RjF0y5MpsU", added: "2026-09-26" },
   { id: "v3096", title: "Fastest Scam Ever", thumbnailId: "JYPUUQhBhXg", added: "2026-09-26" },
-  { id: "v3097", title: "He's Aware", thumbnailId: "0RjF0y5MpsU", added: "2026-09-26" },
-  { id: "v3098", title: "Fastest Scam Ever", thumbnailId: "JYPUUQhBhXg", added: "2026-09-26" },
+  { id: "v3097", title: "Crazy Times", thumbnailId: "8cVSbhPsNzo", added: "2026-09-27" },
+  { id: "v3098", title: "Unhinged Lady Ran for Senate and Got Arrested for Wild Behavior", thumbnailId: "GcqcR-EGpWs", added: "2026-09-27" },
+  { id: "v3099", title: "Crazy Times", thumbnailId: "8cVSbhPsNzo", added: "2026-09-27" },
+  { id: "v3100", title: "Unhinged Lady Ran for Senate and Got Arrested for Wild Behavior", thumbnailId: "GcqcR-EGpWs", added: "2026-09-27" },
 ]
 
 export function getAllVideos(): Video[] {
