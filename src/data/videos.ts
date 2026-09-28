@@ -3106,8 +3106,8 @@ const videos: Video[] = [
   { id: "v3096", title: "Fastest Scam Ever", thumbnailId: "JYPUUQhBhXg", added: "2026-09-26" },
   { id: "v3097", title: "Crazy Times", thumbnailId: "8cVSbhPsNzo", added: "2026-09-27" },
   { id: "v3098", title: "Unhinged Lady Ran for Senate and Got Arrested for Wild Behavior", thumbnailId: "GcqcR-EGpWs", added: "2026-09-27" },
-  { id: "v3099", title: "Crazy Times", thumbnailId: "8cVSbhPsNzo", added: "2026-09-27" },
-  { id: "v3100", title: "Unhinged Lady Ran for Senate and Got Arrested for Wild Behavior", thumbnailId: "GcqcR-EGpWs", added: "2026-09-27" },
+  { id: "v3099", title: "These Are Some Wild Bodycams", thumbnailId: "pi-IO4laax4", added: "2026-09-28" },
+  { id: "v3100", title: "These Are Some Wild Bodycams", thumbnailId: "pi-IO4laax4", added: "2026-09-28" },
 ]
 
 export function getAllVideos(): Video[] {
