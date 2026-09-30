@@ -3107,7 +3107,14 @@ const videos: Video[] = [
   { id: "v3097", title: "Crazy Times", thumbnailId: "8cVSbhPsNzo", added: "2026-09-27" },
   { id: "v3098", title: "Unhinged Lady Ran for Senate and Got Arrested for Wild Behavior", thumbnailId: "GcqcR-EGpWs", added: "2026-09-27" },
   { id: "v3099", title: "These Are Some Wild Bodycams", thumbnailId: "pi-IO4laax4", added: "2026-09-28" },
-  { id: "v3100", title: "These Are Some Wild Bodycams", thumbnailId: "pi-IO4laax4", added: "2026-09-28" },
+  { id: "v3100", title: "Embarrassing Behavior", thumbnailId: "KSlrAOEmTrQ", added: "2026-09-30" },
+  { id: "v3101", title: "Pokemon Chainsaw Criminal Got Caught", thumbnailId: "1lB8U0FleVM", added: "2026-09-30" },
+  { id: "v3102", title: "Wacky Tik Tok Drama", thumbnailId: "fa9bMkW-Ph0", added: "2026-09-30" },
+  { id: "v3103", title: "Can't Believe He's Talking About It", thumbnailId: "qMT_G0ZMuHc", added: "2026-09-30" },
+  { id: "v3104", title: "Pokemon Chainsaw Criminal Got Caught", thumbnailId: "1lB8U0FleVM", added: "2026-09-30" },
+  { id: "v3105", title: "Embarrassing Behavior", thumbnailId: "KSlrAOEmTrQ", added: "2026-09-30" },
+  { id: "v3106", title: "Wacky Tik Tok Drama", thumbnailId: "fa9bMkW-Ph0", added: "2026-09-30" },
+  { id: "v3107", title: "Can't Believe He's Talking About It", thumbnailId: "qMT_G0ZMuHc", added: "2026-09-30" },
 ]
 
 export function getAllVideos(): Video[] {
