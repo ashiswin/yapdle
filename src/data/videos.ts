@@ -3111,10 +3111,10 @@ const videos: Video[] = [
   { id: "v3101", title: "Pokemon Chainsaw Criminal Got Caught", thumbnailId: "1lB8U0FleVM", added: "2026-09-30" },
   { id: "v3102", title: "Wacky Tik Tok Drama", thumbnailId: "fa9bMkW-Ph0", added: "2026-09-30" },
   { id: "v3103", title: "Can't Believe He's Talking About It", thumbnailId: "qMT_G0ZMuHc", added: "2026-09-30" },
-  { id: "v3104", title: "Pokemon Chainsaw Criminal Got Caught", thumbnailId: "1lB8U0FleVM", added: "2026-09-30" },
-  { id: "v3105", title: "Embarrassing Behavior", thumbnailId: "KSlrAOEmTrQ", added: "2026-09-30" },
-  { id: "v3106", title: "Wacky Tik Tok Drama", thumbnailId: "fa9bMkW-Ph0", added: "2026-09-30" },
-  { id: "v3107", title: "Can't Believe He's Talking About It", thumbnailId: "qMT_G0ZMuHc", added: "2026-09-30" },
+  { id: "v3104", title: "There's No Way People Actually Like This Movie", thumbnailId: "D9SYbyyyRGA", added: "2026-10-01" },
+  { id: "v3105", title: "People Are Very Mad at Sony for This", thumbnailId: "m9bDJlcKYSM", added: "2026-10-01" },
+  { id: "v3106", title: "There's No Way People Actually Like This Movie", thumbnailId: "D9SYbyyyRGA", added: "2026-10-01" },
+  { id: "v3107", title: "People Are Very Mad at Sony for This", thumbnailId: "m9bDJlcKYSM", added: "2026-10-01" },
 ]
 
 export function getAllVideos(): Video[] {
