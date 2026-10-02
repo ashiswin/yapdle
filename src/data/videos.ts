@@ -3113,8 +3113,10 @@ const videos: Video[] = [
   { id: "v3103", title: "Can't Believe He's Talking About It", thumbnailId: "qMT_G0ZMuHc", added: "2026-09-30" },
   { id: "v3104", title: "There's No Way People Actually Like This Movie", thumbnailId: "D9SYbyyyRGA", added: "2026-10-01" },
   { id: "v3105", title: "People Are Very Mad at Sony for This", thumbnailId: "m9bDJlcKYSM", added: "2026-10-01" },
-  { id: "v3106", title: "There's No Way People Actually Like This Movie", thumbnailId: "D9SYbyyyRGA", added: "2026-10-01" },
-  { id: "v3107", title: "People Are Very Mad at Sony for This", thumbnailId: "m9bDJlcKYSM", added: "2026-10-01" },
+  { id: "v3106", title: "Actually a Wild Situation", thumbnailId: "GYo-NG7tbok", added: "2026-10-02" },
+  { id: "v3107", title: "Spreading Poop Everywhere Situation is Crazy", thumbnailId: "IBoa1HhN92I", added: "2026-10-02" },
+  { id: "v3108", title: "Actually a Wild Situation", thumbnailId: "GYo-NG7tbok", added: "2026-10-02" },
+  { id: "v3109", title: "Spreading Poop Everywhere Situation is Crazy", thumbnailId: "IBoa1HhN92I", added: "2026-10-02" },
 ]
 
 export function getAllVideos(): Video[] {
