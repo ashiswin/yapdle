@@ -3115,8 +3115,10 @@ const videos: Video[] = [
   { id: "v3105", title: "People Are Very Mad at Sony for This", thumbnailId: "m9bDJlcKYSM", added: "2026-10-01" },
   { id: "v3106", title: "Actually a Wild Situation", thumbnailId: "GYo-NG7tbok", added: "2026-10-02" },
   { id: "v3107", title: "Spreading Poop Everywhere Situation is Crazy", thumbnailId: "IBoa1HhN92I", added: "2026-10-02" },
-  { id: "v3108", title: "Actually a Wild Situation", thumbnailId: "GYo-NG7tbok", added: "2026-10-02" },
-  { id: "v3109", title: "Spreading Poop Everywhere Situation is Crazy", thumbnailId: "IBoa1HhN92I", added: "2026-10-02" },
+  { id: "v3108", title: "I'll Always Remember You", thumbnailId: "iu7gPLRtUCI", added: "2026-10-03" },
+  { id: "v3109", title: "What a Wild Journey", thumbnailId: "Iw40FNf5PCM", added: "2026-10-03" },
+  { id: "v3110", title: "What a Wild Journey", thumbnailId: "Iw40FNf5PCM", added: "2026-10-03" },
+  { id: "v3111", title: "I'll Always Remember You", thumbnailId: "iu7gPLRtUCI", added: "2026-10-03" },
 ]
 
 export function getAllVideos(): Video[] {
