@@ -3117,8 +3117,10 @@ const videos: Video[] = [
   { id: "v3107", title: "Spreading Poop Everywhere Situation is Crazy", thumbnailId: "IBoa1HhN92I", added: "2026-10-02" },
   { id: "v3108", title: "I'll Always Remember You", thumbnailId: "iu7gPLRtUCI", added: "2026-10-03" },
   { id: "v3109", title: "What a Wild Journey", thumbnailId: "Iw40FNf5PCM", added: "2026-10-03" },
-  { id: "v3110", title: "What a Wild Journey", thumbnailId: "Iw40FNf5PCM", added: "2026-10-03" },
-  { id: "v3111", title: "I'll Always Remember You", thumbnailId: "iu7gPLRtUCI", added: "2026-10-03" },
+  { id: "v3110", title: "My Thoughts on Resident Evil Movie", thumbnailId: "6vnD5t5OIwo", added: "2026-10-04" },
+  { id: "v3111", title: "My Thoughts on Wolverine", thumbnailId: "BZ41GJO4l0o", added: "2026-10-04" },
+  { id: "v3112", title: "My Thoughts on Resident Evil Movie", thumbnailId: "6vnD5t5OIwo", added: "2026-10-04" },
+  { id: "v3113", title: "My Thoughts on Wolverine", thumbnailId: "BZ41GJO4l0o", added: "2026-10-04" },
 ]
 
 export function getAllVideos(): Video[] {
