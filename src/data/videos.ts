@@ -3121,8 +3121,10 @@ const videos: Video[] = [
   { id: "v3111", title: "My Thoughts on Wolverine", thumbnailId: "BZ41GJO4l0o", added: "2026-10-04" },
   { id: "v3112", title: "Well That's Horrifying", thumbnailId: "5n9PL_v5yFs", added: "2026-10-05" },
   { id: "v3113", title: "They're Apologizing for the Poop Spreading Situation", thumbnailId: "UfJFM2_otn4", added: "2026-10-05" },
-  { id: "v3114", title: "Well That's Horrifying", thumbnailId: "5n9PL_v5yFs", added: "2026-10-05" },
-  { id: "v3115", title: "They're Apologizing for the Poop Spreading Situation", thumbnailId: "UfJFM2_otn4", added: "2026-10-05" },
+  { id: "v3114", title: "Scalpers are Suffering", thumbnailId: "tDDugd3lIzg", added: "2026-10-06" },
+  { id: "v3115", title: "Mighty Mike Situation Seems Like a Scam Now", thumbnailId: "u42rRkGrsj4", added: "2026-10-06" },
+  { id: "v3116", title: "Scalpers are Suffering", thumbnailId: "tDDugd3lIzg", added: "2026-10-06" },
+  { id: "v3117", title: "Mighty Mike Situation Seems Like a Scam Now", thumbnailId: "u42rRkGrsj4", added: "2026-10-06" },
 ]
 
 export function getAllVideos(): Video[] {
