@@ -3123,8 +3123,10 @@ const videos: Video[] = [
   { id: "v3113", title: "They're Apologizing for the Poop Spreading Situation", thumbnailId: "UfJFM2_otn4", added: "2026-10-05" },
   { id: "v3114", title: "Scalpers are Suffering", thumbnailId: "tDDugd3lIzg", added: "2026-10-06" },
   { id: "v3115", title: "Mighty Mike Situation Seems Like a Scam Now", thumbnailId: "u42rRkGrsj4", added: "2026-10-06" },
-  { id: "v3116", title: "Scalpers are Suffering", thumbnailId: "tDDugd3lIzg", added: "2026-10-06" },
-  { id: "v3117", title: "Mighty Mike Situation Seems Like a Scam Now", thumbnailId: "u42rRkGrsj4", added: "2026-10-06" },
+  { id: "v3116", title: "They're Calling It the Most Satisfying Knockout Ever", thumbnailId: "QEI-C8uao-4", added: "2026-10-07" },
+  { id: "v3117", title: "Extreme Intoxication Unlocked Her Superpowers", thumbnailId: "8sKK03U0qGQ", added: "2026-10-07" },
+  { id: "v3118", title: "Extreme Intoxication Unlocked Her Superpowers", thumbnailId: "8sKK03U0qGQ", added: "2026-10-07" },
+  { id: "v3119", title: "They're Calling It the Most Satisfying Knockout Ever", thumbnailId: "QEI-C8uao-4", added: "2026-10-07" },
 ]
 
 export function getAllVideos(): Video[] {
