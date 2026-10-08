@@ -3125,8 +3125,10 @@ const videos: Video[] = [
   { id: "v3115", title: "Mighty Mike Situation Seems Like a Scam Now", thumbnailId: "u42rRkGrsj4", added: "2026-10-06" },
   { id: "v3116", title: "They're Calling It the Most Satisfying Knockout Ever", thumbnailId: "QEI-C8uao-4", added: "2026-10-07" },
   { id: "v3117", title: "Extreme Intoxication Unlocked Her Superpowers", thumbnailId: "8sKK03U0qGQ", added: "2026-10-07" },
-  { id: "v3118", title: "Extreme Intoxication Unlocked Her Superpowers", thumbnailId: "8sKK03U0qGQ", added: "2026-10-07" },
-  { id: "v3119", title: "They're Calling It the Most Satisfying Knockout Ever", thumbnailId: "QEI-C8uao-4", added: "2026-10-07" },
+  { id: "v3118", title: "Very Unexpected Great News", thumbnailId: "UhkWYdvPG4Y", added: "2026-10-08" },
+  { id: "v3119", title: "This Movie Has Flown Under Everyone's Radar", thumbnailId: "fIGhH2gPxJ0", added: "2026-10-08" },
+  { id: "v3120", title: "Very Unexpected Great News", thumbnailId: "UhkWYdvPG4Y", added: "2026-10-08" },
+  { id: "v3121", title: "This Movie Has Flown Under Everyone's Radar", thumbnailId: "fIGhH2gPxJ0", added: "2026-10-08" },
 ]
 
 export function getAllVideos(): Video[] {
