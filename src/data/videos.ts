@@ -3127,8 +3127,10 @@ const videos: Video[] = [
   { id: "v3117", title: "Extreme Intoxication Unlocked Her Superpowers", thumbnailId: "8sKK03U0qGQ", added: "2026-10-07" },
   { id: "v3118", title: "Very Unexpected Great News", thumbnailId: "UhkWYdvPG4Y", added: "2026-10-08" },
   { id: "v3119", title: "This Movie Has Flown Under Everyone's Radar", thumbnailId: "fIGhH2gPxJ0", added: "2026-10-08" },
-  { id: "v3120", title: "Very Unexpected Great News", thumbnailId: "UhkWYdvPG4Y", added: "2026-10-08" },
-  { id: "v3121", title: "This Movie Has Flown Under Everyone's Radar", thumbnailId: "fIGhH2gPxJ0", added: "2026-10-08" },
+  { id: "v3120", title: "This Device Should Be Illegal", thumbnailId: "dRMlrwU3psM", added: "2026-10-09" },
+  { id: "v3121", title: "Everyone Knew This Day Was Coming", thumbnailId: "e4ZGtJKuA4Q", added: "2026-10-09" },
+  { id: "v3122", title: "This Device Should Be Illegal", thumbnailId: "dRMlrwU3psM", added: "2026-10-09" },
+  { id: "v3123", title: "Everyone Knew This Day Was Coming", thumbnailId: "e4ZGtJKuA4Q", added: "2026-10-09" },
 ]
 
 export function getAllVideos(): Video[] {
