@@ -3129,8 +3129,10 @@ const videos: Video[] = [
   { id: "v3119", title: "This Movie Has Flown Under Everyone's Radar", thumbnailId: "fIGhH2gPxJ0", added: "2026-10-08" },
   { id: "v3120", title: "This Device Should Be Illegal", thumbnailId: "dRMlrwU3psM", added: "2026-10-09" },
   { id: "v3121", title: "Everyone Knew This Day Was Coming", thumbnailId: "e4ZGtJKuA4Q", added: "2026-10-09" },
-  { id: "v3122", title: "This Device Should Be Illegal", thumbnailId: "dRMlrwU3psM", added: "2026-10-09" },
-  { id: "v3123", title: "Everyone Knew This Day Was Coming", thumbnailId: "e4ZGtJKuA4Q", added: "2026-10-09" },
+  { id: "v3122", title: "Scalpers Continue to Lose", thumbnailId: "2XBtLB-P65o", added: "2026-10-10" },
+  { id: "v3123", title: "I Don't Believe It", thumbnailId: "elQMVt36aKU", added: "2026-10-10" },
+  { id: "v3124", title: "Scalpers Continue to Lose", thumbnailId: "2XBtLB-P65o", added: "2026-10-10" },
+  { id: "v3125", title: "I Don't Believe It", thumbnailId: "elQMVt36aKU", added: "2026-10-10" },
 ]
 
 export function getAllVideos(): Video[] {
