@@ -3131,8 +3131,10 @@ const videos: Video[] = [
   { id: "v3121", title: "Everyone Knew This Day Was Coming", thumbnailId: "e4ZGtJKuA4Q", added: "2026-10-09" },
   { id: "v3122", title: "Scalpers Continue to Lose", thumbnailId: "2XBtLB-P65o", added: "2026-10-10" },
   { id: "v3123", title: "I Don't Believe It", thumbnailId: "elQMVt36aKU", added: "2026-10-10" },
-  { id: "v3124", title: "Scalpers Continue to Lose", thumbnailId: "2XBtLB-P65o", added: "2026-10-10" },
-  { id: "v3125", title: "I Don't Believe It", thumbnailId: "elQMVt36aKU", added: "2026-10-10" },
+  { id: "v3124", title: "You Don't Hate Scalpers Enough", thumbnailId: "UxI7xOKcx40", added: "2026-10-11" },
+  { id: "v3125", title: "Cheaters are Crashing Out", thumbnailId: "6LXnI-h1gWs", added: "2026-10-11" },
+  { id: "v3126", title: "Cheaters are Crashing Out", thumbnailId: "6LXnI-h1gWs", added: "2026-10-11" },
+  { id: "v3127", title: "You Don't Hate Scalpers Enough", thumbnailId: "UxI7xOKcx40", added: "2026-10-11" },
 ]
 
 export function getAllVideos(): Video[] {
