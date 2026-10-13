@@ -3135,8 +3135,10 @@ const videos: Video[] = [
   { id: "v3125", title: "Cheaters are Crashing Out", thumbnailId: "6LXnI-h1gWs", added: "2026-10-11" },
   { id: "v3126", title: "GTA 6 Collector's Edition is Pathetic", thumbnailId: "5Z7IZa-fGCc", added: "2026-10-12" },
   { id: "v3127", title: "My Thoughts on Primetime", thumbnailId: "lbmQfm0FSNo", added: "2026-10-12" },
-  { id: "v3128", title: "GTA 6 Collector's Edition is Pathetic", thumbnailId: "5Z7IZa-fGCc", added: "2026-10-12" },
-  { id: "v3129", title: "My Thoughts on Primetime", thumbnailId: "lbmQfm0FSNo", added: "2026-10-12" },
+  { id: "v3128", title: "Craziest Story You've Never Heard of", thumbnailId: "NaJFvurMgoQ", added: "2026-10-13" },
+  { id: "v3129", title: "Accused Murderer Has His AI Music Played in Court", thumbnailId: "wqgobme0yyM", added: "2026-10-13" },
+  { id: "v3130", title: "Craziest Story You've Never Heard of", thumbnailId: "NaJFvurMgoQ", added: "2026-10-13" },
+  { id: "v3131", title: "Accused Murderer Has His AI Music Played in Court", thumbnailId: "wqgobme0yyM", added: "2026-10-13" },
 ]
 
 export function getAllVideos(): Video[] {
