@@ -3137,8 +3137,10 @@ const videos: Video[] = [
   { id: "v3127", title: "My Thoughts on Primetime", thumbnailId: "lbmQfm0FSNo", added: "2026-10-12" },
   { id: "v3128", title: "Craziest Story You've Never Heard of", thumbnailId: "NaJFvurMgoQ", added: "2026-10-13" },
   { id: "v3129", title: "Accused Murderer Has His AI Music Played in Court", thumbnailId: "wqgobme0yyM", added: "2026-10-13" },
-  { id: "v3130", title: "Craziest Story You've Never Heard of", thumbnailId: "NaJFvurMgoQ", added: "2026-10-13" },
-  { id: "v3131", title: "Accused Murderer Has His AI Music Played in Court", thumbnailId: "wqgobme0yyM", added: "2026-10-13" },
+  { id: "v3130", title: "Going Over Some Things", thumbnailId: "dMYhfdDsIVs", added: "2026-10-14" },
+  { id: "v3131", title: "Goofiest Scammer Ever", thumbnailId: "W8zXKRjuwCA", added: "2026-10-14" },
+  { id: "v3132", title: "Goofiest Scammer Ever", thumbnailId: "W8zXKRjuwCA", added: "2026-10-14" },
+  { id: "v3133", title: "Going Over Some Things", thumbnailId: "dMYhfdDsIVs", added: "2026-10-14" },
 ]
 
 export function getAllVideos(): Video[] {
