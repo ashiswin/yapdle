@@ -3139,8 +3139,8 @@ const videos: Video[] = [
   { id: "v3129", title: "Accused Murderer Has His AI Music Played in Court", thumbnailId: "wqgobme0yyM", added: "2026-10-13" },
   { id: "v3130", title: "Going Over Some Things", thumbnailId: "dMYhfdDsIVs", added: "2026-10-14" },
   { id: "v3131", title: "Goofiest Scammer Ever", thumbnailId: "W8zXKRjuwCA", added: "2026-10-14" },
-  { id: "v3132", title: "Goofiest Scammer Ever", thumbnailId: "W8zXKRjuwCA", added: "2026-10-14" },
-  { id: "v3133", title: "Going Over Some Things", thumbnailId: "dMYhfdDsIVs", added: "2026-10-14" },
+  { id: "v3132", title: "It Just Gets More Embarrassing for Them", thumbnailId: "Y4gQFJ_EeWA", added: "2026-10-15" },
+  { id: "v3133", title: "It Just Gets More Embarrassing for Them", thumbnailId: "Y4gQFJ_EeWA", added: "2026-10-15" },
 ]
 
 export function getAllVideos(): Video[] {
