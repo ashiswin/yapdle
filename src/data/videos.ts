@@ -3140,7 +3140,10 @@ const videos: Video[] = [
   { id: "v3130", title: "Going Over Some Things", thumbnailId: "dMYhfdDsIVs", added: "2026-10-14" },
   { id: "v3131", title: "Goofiest Scammer Ever", thumbnailId: "W8zXKRjuwCA", added: "2026-10-14" },
   { id: "v3132", title: "It Just Gets More Embarrassing for Them", thumbnailId: "Y4gQFJ_EeWA", added: "2026-10-15" },
-  { id: "v3133", title: "It Just Gets More Embarrassing for Them", thumbnailId: "Y4gQFJ_EeWA", added: "2026-10-15" },
+  { id: "v3133", title: "Worst Defense Ever", thumbnailId: "3D7tcrMYo5M", added: "2026-10-16" },
+  { id: "v3134", title: "That Didn't Go Very Well", thumbnailId: "VB-t3l-hl3s", added: "2026-10-16" },
+  { id: "v3135", title: "Worst Defense Ever", thumbnailId: "3D7tcrMYo5M", added: "2026-10-16" },
+  { id: "v3136", title: "That Didn't Go Very Well", thumbnailId: "VB-t3l-hl3s", added: "2026-10-16" },
 ]
 
 export function getAllVideos(): Video[] {
