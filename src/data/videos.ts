@@ -3150,8 +3150,8 @@ const videos: Video[] = [
   { id: "v3140", title: "EU Trying to Destroy Gaming", thumbnailId: "5sLIAuH9038", added: "2026-10-19" },
   { id: "v3141", title: "SeaWorld Dark Romance Event is Crazy", thumbnailId: "YjtJMOpJNOA", added: "2026-10-20" },
   { id: "v3142", title: "Gaming Leadership is Out of Touch", thumbnailId: "ipmHNNhEukQ", added: "2026-10-20" },
-  { id: "v3143", title: "SeaWorld Dark Romance Event is Crazy", thumbnailId: "YjtJMOpJNOA", added: "2026-10-20" },
-  { id: "v3144", title: "Gaming Leadership is Out of Touch", thumbnailId: "ipmHNNhEukQ", added: "2026-10-20" },
+  { id: "v3143", title: "Another Whistleblower Has Passed Away", thumbnailId: "Iut2c8yRryg", added: "2026-10-21" },
+  { id: "v3144", title: "Another Whistleblower Has Passed Away", thumbnailId: "Iut2c8yRryg", added: "2026-10-21" },
 ]
 
 export function getAllVideos(): Video[] {
