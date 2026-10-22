@@ -3151,7 +3151,10 @@ const videos: Video[] = [
   { id: "v3141", title: "SeaWorld Dark Romance Event is Crazy", thumbnailId: "YjtJMOpJNOA", added: "2026-10-20" },
   { id: "v3142", title: "Gaming Leadership is Out of Touch", thumbnailId: "ipmHNNhEukQ", added: "2026-10-20" },
   { id: "v3143", title: "Another Whistleblower Has Passed Away", thumbnailId: "Iut2c8yRryg", added: "2026-10-21" },
-  { id: "v3144", title: "Another Whistleblower Has Passed Away", thumbnailId: "Iut2c8yRryg", added: "2026-10-21" },
+  { id: "v3144", title: "Nothing is Safe Anymore", thumbnailId: "P77PZDq0vwI", added: "2026-10-22" },
+  { id: "v3145", title: "My Thoughts on Lanterns", thumbnailId: "R5qA0HuGW1E", added: "2026-10-22" },
+  { id: "v3146", title: "Nothing is Safe Anymore", thumbnailId: "P77PZDq0vwI", added: "2026-10-22" },
+  { id: "v3147", title: "My Thoughts on Lanterns", thumbnailId: "R5qA0HuGW1E", added: "2026-10-22" },
 ]
 
 export function getAllVideos(): Video[] {
