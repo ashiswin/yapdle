@@ -3153,8 +3153,10 @@ const videos: Video[] = [
   { id: "v3143", title: "Another Whistleblower Has Passed Away", thumbnailId: "Iut2c8yRryg", added: "2026-10-21" },
   { id: "v3144", title: "Nothing is Safe Anymore", thumbnailId: "P77PZDq0vwI", added: "2026-10-22" },
   { id: "v3145", title: "My Thoughts on Lanterns", thumbnailId: "R5qA0HuGW1E", added: "2026-10-22" },
-  { id: "v3146", title: "Nothing is Safe Anymore", thumbnailId: "P77PZDq0vwI", added: "2026-10-22" },
-  { id: "v3147", title: "My Thoughts on Lanterns", thumbnailId: "R5qA0HuGW1E", added: "2026-10-22" },
+  { id: "v3146", title: "I Played Every Sly Cooper Game to Find the Best One", thumbnailId: "_-ePtOtBeeo", added: "2026-10-23" },
+  { id: "v3147", title: "They Are Extremely Pathetic", thumbnailId: "N8XImd3mJBE", added: "2026-10-23" },
+  { id: "v3148", title: "They Are Extremely Pathetic", thumbnailId: "N8XImd3mJBE", added: "2026-10-23" },
+  { id: "v3149", title: "I Played Every Sly Cooper Game to Find the Best One", thumbnailId: "_-ePtOtBeeo", added: "2026-10-23" },
 ]
 
 export function getAllVideos(): Video[] {
