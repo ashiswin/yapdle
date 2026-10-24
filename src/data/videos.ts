@@ -3155,8 +3155,10 @@ const videos: Video[] = [
   { id: "v3145", title: "My Thoughts on Lanterns", thumbnailId: "R5qA0HuGW1E", added: "2026-10-22" },
   { id: "v3146", title: "I Played Every Sly Cooper Game to Find the Best One", thumbnailId: "_-ePtOtBeeo", added: "2026-10-23" },
   { id: "v3147", title: "They Are Extremely Pathetic", thumbnailId: "N8XImd3mJBE", added: "2026-10-23" },
-  { id: "v3148", title: "They Are Extremely Pathetic", thumbnailId: "N8XImd3mJBE", added: "2026-10-23" },
-  { id: "v3149", title: "I Played Every Sly Cooper Game to Find the Best One", thumbnailId: "_-ePtOtBeeo", added: "2026-10-23" },
+  { id: "v3148", title: "No", thumbnailId: "CGv8IRZxEuM", added: "2026-10-24" },
+  { id: "v3149", title: "What a Terrible Business", thumbnailId: "I1sIibynH9A", added: "2026-10-24" },
+  { id: "v3150", title: "No", thumbnailId: "CGv8IRZxEuM", added: "2026-10-24" },
+  { id: "v3151", title: "What a Terrible Business", thumbnailId: "I1sIibynH9A", added: "2026-10-24" },
 ]
 
 export function getAllVideos(): Video[] {
