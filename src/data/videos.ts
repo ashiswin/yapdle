@@ -3159,8 +3159,10 @@ const videos: Video[] = [
   { id: "v3149", title: "What a Terrible Business", thumbnailId: "I1sIibynH9A", added: "2026-10-24" },
   { id: "v3150", title: "Stealing a Police Car Leads to Wacky Chase", thumbnailId: "NMpsPXXwU00", added: "2026-10-25" },
   { id: "v3151", title: "My Thoughts on Other Mommy", thumbnailId: "EwCtQAMpj1o", added: "2026-10-25" },
-  { id: "v3152", title: "My Thoughts on Other Mommy", thumbnailId: "EwCtQAMpj1o", added: "2026-10-25" },
-  { id: "v3153", title: "Stealing a Police Car Leads to Wacky Chase", thumbnailId: "NMpsPXXwU00", added: "2026-10-25" },
+  { id: "v3152", title: "He Returned with a New Threat", thumbnailId: "QWOReBAb_CU", added: "2026-10-26" },
+  { id: "v3153", title: "Arrest Him Now", thumbnailId: "hAA-fKqjmQ4", added: "2026-10-26" },
+  { id: "v3154", title: "He Returned with a New Threat", thumbnailId: "QWOReBAb_CU", added: "2026-10-26" },
+  { id: "v3155", title: "Arrest Him Now", thumbnailId: "hAA-fKqjmQ4", added: "2026-10-26" },
 ]
 
 export function getAllVideos(): Video[] {
