@@ -3161,8 +3161,10 @@ const videos: Video[] = [
   { id: "v3151", title: "My Thoughts on Other Mommy", thumbnailId: "EwCtQAMpj1o", added: "2026-10-25" },
   { id: "v3152", title: "He Returned with a New Threat", thumbnailId: "QWOReBAb_CU", added: "2026-10-26" },
   { id: "v3153", title: "Arrest Him Now", thumbnailId: "hAA-fKqjmQ4", added: "2026-10-26" },
-  { id: "v3154", title: "He Returned with a New Threat", thumbnailId: "QWOReBAb_CU", added: "2026-10-26" },
-  { id: "v3155", title: "Arrest Him Now", thumbnailId: "hAA-fKqjmQ4", added: "2026-10-26" },
+  { id: "v3154", title: "This Alpha Male is Having a Rough Time", thumbnailId: "xAnBpIfdUUc", added: "2026-10-27" },
+  { id: "v3155", title: "There's No Way This is Real", thumbnailId: "XLBPRErLp58", added: "2026-10-27" },
+  { id: "v3156", title: "There's No Way This is Real", thumbnailId: "XLBPRErLp58", added: "2026-10-27" },
+  { id: "v3157", title: "This Alpha Male is Having a Rough Time", thumbnailId: "xAnBpIfdUUc", added: "2026-10-27" },
 ]
 
 export function getAllVideos(): Video[] {
