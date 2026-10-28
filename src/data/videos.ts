@@ -3163,8 +3163,10 @@ const videos: Video[] = [
   { id: "v3153", title: "Arrest Him Now", thumbnailId: "hAA-fKqjmQ4", added: "2026-10-26" },
   { id: "v3154", title: "This Alpha Male is Having a Rough Time", thumbnailId: "xAnBpIfdUUc", added: "2026-10-27" },
   { id: "v3155", title: "There's No Way This is Real", thumbnailId: "XLBPRErLp58", added: "2026-10-27" },
-  { id: "v3156", title: "There's No Way This is Real", thumbnailId: "XLBPRErLp58", added: "2026-10-27" },
-  { id: "v3157", title: "This Alpha Male is Having a Rough Time", thumbnailId: "xAnBpIfdUUc", added: "2026-10-27" },
+  { id: "v3156", title: "Diddy Medical Emergency", thumbnailId: "UsGUjLjbovs", added: "2026-10-28" },
+  { id: "v3157", title: "I Don't Know How They Get Away with This", thumbnailId: "MFHWbeeQ5bE", added: "2026-10-28" },
+  { id: "v3158", title: "I Don't Know How They Get Away with This", thumbnailId: "MFHWbeeQ5bE", added: "2026-10-28" },
+  { id: "v3159", title: "Diddy Medical Emergency", thumbnailId: "UsGUjLjbovs", added: "2026-10-28" },
 ]
 
 export function getAllVideos(): Video[] {
