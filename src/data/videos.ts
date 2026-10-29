@@ -3165,8 +3165,10 @@ const videos: Video[] = [
   { id: "v3155", title: "There's No Way This is Real", thumbnailId: "XLBPRErLp58", added: "2026-10-27" },
   { id: "v3156", title: "Diddy Medical Emergency", thumbnailId: "UsGUjLjbovs", added: "2026-10-28" },
   { id: "v3157", title: "I Don't Know How They Get Away with This", thumbnailId: "MFHWbeeQ5bE", added: "2026-10-28" },
-  { id: "v3158", title: "I Don't Know How They Get Away with This", thumbnailId: "MFHWbeeQ5bE", added: "2026-10-28" },
-  { id: "v3159", title: "Diddy Medical Emergency", thumbnailId: "UsGUjLjbovs", added: "2026-10-28" },
+  { id: "v3158", title: "The Most Wholesome Community Ever", thumbnailId: "HPJ4TX4pBQ0", added: "2026-10-29" },
+  { id: "v3159", title: "A Glaring Issue That's Only Getting Worse", thumbnailId: "2ylVVt7GWQo", added: "2026-10-29" },
+  { id: "v3160", title: "A Glaring Issue That's Only Getting Worse", thumbnailId: "2ylVVt7GWQo", added: "2026-10-29" },
+  { id: "v3161", title: "The Most Wholesome Community Ever", thumbnailId: "HPJ4TX4pBQ0", added: "2026-10-29" },
 ]
 
 export function getAllVideos(): Video[] {
