@@ -3169,8 +3169,10 @@ const videos: Video[] = [
   { id: "v3159", title: "A Glaring Issue That's Only Getting Worse", thumbnailId: "2ylVVt7GWQo", added: "2026-10-29" },
   { id: "v3160", title: "Completely Unacceptable", thumbnailId: "O2MjHSUwr4s", added: "2026-10-30" },
   { id: "v3161", title: "Black Box", thumbnailId: "vRFCxC20RGM", added: "2026-10-30" },
-  { id: "v3162", title: "Completely Unacceptable", thumbnailId: "O2MjHSUwr4s", added: "2026-10-30" },
-  { id: "v3163", title: "Black Box", thumbnailId: "vRFCxC20RGM", added: "2026-10-30" },
+  { id: "v3162", title: "I've Never Been This Stunned By a Movie", thumbnailId: "DdwLiqNmS6g", added: "2026-10-31" },
+  { id: "v3163", title: "Controversial Toy", thumbnailId: "PSWlgFOZICk", added: "2026-10-31" },
+  { id: "v3164", title: "I've Never Been This Stunned By a Movie", thumbnailId: "DdwLiqNmS6g", added: "2026-10-31" },
+  { id: "v3165", title: "Controversial Toy", thumbnailId: "PSWlgFOZICk", added: "2026-10-31" },
 ]
 
 export function getAllVideos(): Video[] {
