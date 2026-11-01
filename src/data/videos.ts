@@ -3171,8 +3171,10 @@ const videos: Video[] = [
   { id: "v3161", title: "Black Box", thumbnailId: "vRFCxC20RGM", added: "2026-10-30" },
   { id: "v3162", title: "I've Never Been This Stunned By a Movie", thumbnailId: "DdwLiqNmS6g", added: "2026-10-31" },
   { id: "v3163", title: "Controversial Toy", thumbnailId: "PSWlgFOZICk", added: "2026-10-31" },
-  { id: "v3164", title: "I've Never Been This Stunned By a Movie", thumbnailId: "DdwLiqNmS6g", added: "2026-10-31" },
-  { id: "v3165", title: "Controversial Toy", thumbnailId: "PSWlgFOZICk", added: "2026-10-31" },
+  { id: "v3164", title: "Why Do I Keep Watching This Show", thumbnailId: "RyN5rYq0dLM", added: "2026-11-01" },
+  { id: "v3165", title: "Responding to the Weird Lady", thumbnailId: "1SnB9veeJms", added: "2026-11-01" },
+  { id: "v3166", title: "Responding to the Weird Lady", thumbnailId: "1SnB9veeJms", added: "2026-11-01" },
+  { id: "v3167", title: "Why Do I Keep Watching This Show", thumbnailId: "RyN5rYq0dLM", added: "2026-11-01" },
 ]
 
 export function getAllVideos(): Video[] {
