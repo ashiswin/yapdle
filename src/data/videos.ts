@@ -3173,8 +3173,10 @@ const videos: Video[] = [
   { id: "v3163", title: "Controversial Toy", thumbnailId: "PSWlgFOZICk", added: "2026-10-31" },
   { id: "v3164", title: "Why Do I Keep Watching This Show", thumbnailId: "RyN5rYq0dLM", added: "2026-11-01" },
   { id: "v3165", title: "Responding to the Weird Lady", thumbnailId: "1SnB9veeJms", added: "2026-11-01" },
-  { id: "v3166", title: "Responding to the Weird Lady", thumbnailId: "1SnB9veeJms", added: "2026-11-01" },
-  { id: "v3167", title: "Why Do I Keep Watching This Show", thumbnailId: "RyN5rYq0dLM", added: "2026-11-01" },
+  { id: "v3166", title: "My Thoughts on Street Fighter Movie", thumbnailId: "V877S41XZHA", added: "2026-11-02" },
+  { id: "v3167", title: "I Really Hate This Chicken", thumbnailId: "uBXxL6QjHXY", added: "2026-11-02" },
+  { id: "v3168", title: "My Thoughts on Street Fighter Movie", thumbnailId: "V877S41XZHA", added: "2026-11-02" },
+  { id: "v3169", title: "I Really Hate This Chicken", thumbnailId: "uBXxL6QjHXY", added: "2026-11-02" },
 ]
 
 export function getAllVideos(): Video[] {
