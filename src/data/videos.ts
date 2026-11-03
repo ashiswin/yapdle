@@ -3175,8 +3175,8 @@ const videos: Video[] = [
   { id: "v3165", title: "Responding to the Weird Lady", thumbnailId: "1SnB9veeJms", added: "2026-11-01" },
   { id: "v3166", title: "My Thoughts on Street Fighter Movie", thumbnailId: "V877S41XZHA", added: "2026-11-02" },
   { id: "v3167", title: "I Really Hate This Chicken", thumbnailId: "uBXxL6QjHXY", added: "2026-11-02" },
-  { id: "v3168", title: "My Thoughts on Street Fighter Movie", thumbnailId: "V877S41XZHA", added: "2026-11-02" },
-  { id: "v3169", title: "I Really Hate This Chicken", thumbnailId: "uBXxL6QjHXY", added: "2026-11-02" },
+  { id: "v3168", title: "How is This a Controversy", thumbnailId: "n5dm75JVNvY", added: "2026-11-03" },
+  { id: "v3169", title: "How is This a Controversy", thumbnailId: "n5dm75JVNvY", added: "2026-11-03" },
 ]
 
 export function getAllVideos(): Video[] {
