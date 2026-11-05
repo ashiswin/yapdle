@@ -3178,8 +3178,10 @@ const videos: Video[] = [
   { id: "v3168", title: "How is This a Controversy", thumbnailId: "n5dm75JVNvY", added: "2026-11-03" },
   { id: "v3169", title: "Faithful Sheriff Hits a New Low", thumbnailId: "b3B36z3YI_w", added: "2026-11-04" },
   { id: "v3170", title: "I'm Getting Competitive Again", thumbnailId: "u5Im4E3myoM", added: "2026-11-04" },
-  { id: "v3171", title: "Faithful Sheriff Hits a New Low", thumbnailId: "b3B36z3YI_w", added: "2026-11-04" },
-  { id: "v3172", title: "I'm Getting Competitive Again", thumbnailId: "u5Im4E3myoM", added: "2026-11-04" },
+  { id: "v3171", title: "That Was Much Worse Than I Expected", thumbnailId: "uHORTt4gq2M", added: "2026-11-05" },
+  { id: "v3172", title: "Resident Evil Fans Have Been Eating Good", thumbnailId: "DNDrlv5iQlY", added: "2026-11-05" },
+  { id: "v3173", title: "Resident Evil Fans Have Been Eating Good", thumbnailId: "DNDrlv5iQlY", added: "2026-11-05" },
+  { id: "v3174", title: "That Was Much Worse Than I Expected", thumbnailId: "uHORTt4gq2M", added: "2026-11-05" },
 ]
 
 export function getAllVideos(): Video[] {
