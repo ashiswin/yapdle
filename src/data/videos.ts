@@ -3182,8 +3182,8 @@ const videos: Video[] = [
   { id: "v3172", title: "Resident Evil Fans Have Been Eating Good", thumbnailId: "DNDrlv5iQlY", added: "2026-11-05" },
   { id: "v3173", title: "Goodbye BioWare", thumbnailId: "xmZPQFQX2s4", added: "2026-11-06" },
   { id: "v3174", title: "An Issue Out of Control", thumbnailId: "4dpJmCan-6Q", added: "2026-11-06" },
-  { id: "v3175", title: "An Issue Out of Control", thumbnailId: "4dpJmCan-6Q", added: "2026-11-06" },
-  { id: "v3176", title: "Goodbye BioWare", thumbnailId: "xmZPQFQX2s4", added: "2026-11-06" },
+  { id: "v3175", title: "He Just Dropped Huge News on Alien Ships", thumbnailId: "6KBdfIoNb20", added: "2026-11-07" },
+  { id: "v3176", title: "He Just Dropped Huge News on Alien Ships", thumbnailId: "6KBdfIoNb20", added: "2026-11-07" },
 ]
 
 export function getAllVideos(): Video[] {
