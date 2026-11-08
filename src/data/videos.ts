@@ -3183,7 +3183,10 @@ const videos: Video[] = [
   { id: "v3173", title: "Goodbye BioWare", thumbnailId: "xmZPQFQX2s4", added: "2026-11-06" },
   { id: "v3174", title: "An Issue Out of Control", thumbnailId: "4dpJmCan-6Q", added: "2026-11-06" },
   { id: "v3175", title: "He Just Dropped Huge News on Alien Ships", thumbnailId: "6KBdfIoNb20", added: "2026-11-07" },
-  { id: "v3176", title: "He Just Dropped Huge News on Alien Ships", thumbnailId: "6KBdfIoNb20", added: "2026-11-07" },
+  { id: "v3176", title: "Airbnb Changes Leaves Hosts Angry", thumbnailId: "wmpTu8sTImQ", added: "2026-11-08" },
+  { id: "v3177", title: "My Thoughts on New Carrie Series", thumbnailId: "YCkXkunO4fk", added: "2026-11-08" },
+  { id: "v3178", title: "My Thoughts on New Carrie Series", thumbnailId: "YCkXkunO4fk", added: "2026-11-08" },
+  { id: "v3179", title: "Airbnb Changes Leaves Hosts Angry", thumbnailId: "wmpTu8sTImQ", added: "2026-11-08" },
 ]
 
 export function getAllVideos(): Video[] {
