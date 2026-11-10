@@ -3187,8 +3187,10 @@ const videos: Video[] = [
   { id: "v3177", title: "My Thoughts on New Carrie Series", thumbnailId: "YCkXkunO4fk", added: "2026-11-08" },
   { id: "v3178", title: "H3 Cheating Situation", thumbnailId: "QXHG2Zmctcg", added: "2026-11-09" },
   { id: "v3179", title: "My Thoughts on Clayface", thumbnailId: "sRv16EZ7dg4", added: "2026-11-09" },
-  { id: "v3180", title: "H3 Cheating Situation", thumbnailId: "QXHG2Zmctcg", added: "2026-11-09" },
-  { id: "v3181", title: "My Thoughts on Clayface", thumbnailId: "sRv16EZ7dg4", added: "2026-11-09" },
+  { id: "v3180", title: "Insufferable Angry Customers", thumbnailId: "Z2AYo0WvEFA", added: "2026-11-10" },
+  { id: "v3181", title: "Snoopy Cup Madness", thumbnailId: "3aTx4aCWKWI", added: "2026-11-10" },
+  { id: "v3182", title: "Snoopy Cup Madness", thumbnailId: "3aTx4aCWKWI", added: "2026-11-10" },
+  { id: "v3183", title: "Insufferable Angry Customers", thumbnailId: "Z2AYo0WvEFA", added: "2026-11-10" },
 ]
 
 export function getAllVideos(): Video[] {
