@@ -3193,8 +3193,8 @@ const videos: Video[] = [
   { id: "v3183", title: "I Hope This Movie Does Extremely Well", thumbnailId: "6zy-jP3TNeI", added: "2026-11-11" },
   { id: "v3184", title: "$1 Million Card Heist is Crazy", thumbnailId: "z6a1QrGho0k", added: "2026-11-12" },
   { id: "v3185", title: "My Thoughts on Cyberpunk Edgerunners Season 2", thumbnailId: "Wa-hNBCZI2A", added: "2026-11-12" },
-  { id: "v3186", title: "My Thoughts on Cyberpunk Edgerunners Season 2", thumbnailId: "Wa-hNBCZI2A", added: "2026-11-12" },
-  { id: "v3187", title: "$1 Million Card Heist is Crazy", thumbnailId: "z6a1QrGho0k", added: "2026-11-12" },
+  { id: "v3186", title: "iPhone Duo Problem is Getting Worse", thumbnailId: "4FOOKUfUWzg", added: "2026-11-13" },
+  { id: "v3187", title: "iPhone Duo Problem is Getting Worse", thumbnailId: "4FOOKUfUWzg", added: "2026-11-13" },
 ]
 
 export function getAllVideos(): Video[] {
