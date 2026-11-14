@@ -3194,7 +3194,10 @@ const videos: Video[] = [
   { id: "v3184", title: "$1 Million Card Heist is Crazy", thumbnailId: "z6a1QrGho0k", added: "2026-11-12" },
   { id: "v3185", title: "My Thoughts on Cyberpunk Edgerunners Season 2", thumbnailId: "Wa-hNBCZI2A", added: "2026-11-12" },
   { id: "v3186", title: "iPhone Duo Problem is Getting Worse", thumbnailId: "4FOOKUfUWzg", added: "2026-11-13" },
-  { id: "v3187", title: "iPhone Duo Problem is Getting Worse", thumbnailId: "4FOOKUfUWzg", added: "2026-11-13" },
+  { id: "v3187", title: "RIP Labubu", thumbnailId: "oltlarnkPxI", added: "2026-11-14" },
+  { id: "v3188", title: "Bleach Anime Just Ended After Two Decades", thumbnailId: "Pw81QQyFROI", added: "2026-11-14" },
+  { id: "v3189", title: "Bleach Anime Just Ended After Two Decades", thumbnailId: "Pw81QQyFROI", added: "2026-11-14" },
+  { id: "v3190", title: "RIP Labubu", thumbnailId: "oltlarnkPxI", added: "2026-11-14" },
 ]
 
 export function getAllVideos(): Video[] {
