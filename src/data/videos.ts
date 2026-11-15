@@ -3196,8 +3196,8 @@ const videos: Video[] = [
   { id: "v3186", title: "iPhone Duo Problem is Getting Worse", thumbnailId: "4FOOKUfUWzg", added: "2026-11-13" },
   { id: "v3187", title: "RIP Labubu", thumbnailId: "oltlarnkPxI", added: "2026-11-14" },
   { id: "v3188", title: "Bleach Anime Just Ended After Two Decades", thumbnailId: "Pw81QQyFROI", added: "2026-11-14" },
-  { id: "v3189", title: "Bleach Anime Just Ended After Two Decades", thumbnailId: "Pw81QQyFROI", added: "2026-11-14" },
-  { id: "v3190", title: "RIP Labubu", thumbnailId: "oltlarnkPxI", added: "2026-11-14" },
+  { id: "v3189", title: "Horrible Prankster Pushes Father Too Far", thumbnailId: "hAHXmCQpR6M", added: "2026-11-15" },
+  { id: "v3190", title: "Horrible Prankster Pushes Father Too Far", thumbnailId: "hAHXmCQpR6M", added: "2026-11-15" },
 ]
 
 export function getAllVideos(): Video[] {
