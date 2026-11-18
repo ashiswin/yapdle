@@ -3199,7 +3199,10 @@ const videos: Video[] = [
   { id: "v3189", title: "Horrible Prankster Pushes Father Too Far", thumbnailId: "hAHXmCQpR6M", added: "2026-11-15" },
   { id: "v3190", title: "One of My Biggest Fears", thumbnailId: "WBTCFXxc1jA", added: "2026-11-16" },
   { id: "v3191", title: "Craziest Thing I've Ever Bought from Facebook Marketplace", thumbnailId: "sx4PT2COAtM", added: "2026-11-17" },
-  { id: "v3192", title: "Craziest Thing I've Ever Bought from Facebook Marketplace", thumbnailId: "sx4PT2COAtM", added: "2026-11-17" },
+  { id: "v3192", title: "What Happened to My Trump Phone", thumbnailId: "xRvG_2e0Tqc", added: "2026-11-18" },
+  { id: "v3193", title: "Largest Hack Ever Just Happened", thumbnailId: "OOWUQ6f8OLQ", added: "2026-11-18" },
+  { id: "v3194", title: "Largest Hack Ever Just Happened", thumbnailId: "OOWUQ6f8OLQ", added: "2026-11-18" },
+  { id: "v3195", title: "What Happened to My Trump Phone", thumbnailId: "xRvG_2e0Tqc", added: "2026-11-18" },
 ]
 
 export function getAllVideos(): Video[] {
