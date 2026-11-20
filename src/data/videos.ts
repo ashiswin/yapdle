@@ -3203,8 +3203,10 @@ const videos: Video[] = [
   { id: "v3193", title: "Largest Hack Ever Just Happened", thumbnailId: "OOWUQ6f8OLQ", added: "2026-11-18" },
   { id: "v3194", title: "It's Outrageous Now", thumbnailId: "K5x7K5ZwKM8", added: "2026-11-19" },
   { id: "v3195", title: "Cheater Faked His Death", thumbnailId: "ifBMAl-WIvY", added: "2026-11-19" },
-  { id: "v3196", title: "It's Outrageous Now", thumbnailId: "K5x7K5ZwKM8", added: "2026-11-19" },
-  { id: "v3197", title: "Cheater Faked His Death", thumbnailId: "ifBMAl-WIvY", added: "2026-11-19" },
+  { id: "v3196", title: "Another Pathetic Food Reviewer", thumbnailId: "xowZsoPq8Gw", added: "2026-11-20" },
+  { id: "v3197", title: "Pathetic Reviewer Getting Clowned On", thumbnailId: "vdJptyBTe_4", added: "2026-11-20" },
+  { id: "v3198", title: "Pathetic Reviewer Getting Clowned On", thumbnailId: "vdJptyBTe_4", added: "2026-11-20" },
+  { id: "v3199", title: "Another Pathetic Food Reviewer", thumbnailId: "xowZsoPq8Gw", added: "2026-11-20" },
 ]
 
 export function getAllVideos(): Video[] {
