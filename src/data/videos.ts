@@ -3205,8 +3205,10 @@ const videos: Video[] = [
   { id: "v3195", title: "Cheater Faked His Death", thumbnailId: "ifBMAl-WIvY", added: "2026-11-19" },
   { id: "v3196", title: "Another Pathetic Food Reviewer", thumbnailId: "xowZsoPq8Gw", added: "2026-11-20" },
   { id: "v3197", title: "Pathetic Reviewer Getting Clowned On", thumbnailId: "vdJptyBTe_4", added: "2026-11-20" },
-  { id: "v3198", title: "Pathetic Reviewer Getting Clowned On", thumbnailId: "vdJptyBTe_4", added: "2026-11-20" },
-  { id: "v3199", title: "Another Pathetic Food Reviewer", thumbnailId: "xowZsoPq8Gw", added: "2026-11-20" },
+  { id: "v3198", title: "Well That's Getting Worse", thumbnailId: "zkg_EILRgkI", added: "2026-11-21" },
+  { id: "v3199", title: "Plane Crash Conspiracy Freaks Have Lost Their Minds", thumbnailId: "NDKaGbpOqTQ", added: "2026-11-21" },
+  { id: "v3200", title: "Plane Crash Conspiracy Freaks Have Lost Their Minds", thumbnailId: "NDKaGbpOqTQ", added: "2026-11-21" },
+  { id: "v3201", title: "Well That's Getting Worse", thumbnailId: "zkg_EILRgkI", added: "2026-11-21" },
 ]
 
 export function getAllVideos(): Video[] {
