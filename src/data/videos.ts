@@ -3207,8 +3207,10 @@ const videos: Video[] = [
   { id: "v3197", title: "Pathetic Reviewer Getting Clowned On", thumbnailId: "vdJptyBTe_4", added: "2026-11-20" },
   { id: "v3198", title: "Well That's Getting Worse", thumbnailId: "zkg_EILRgkI", added: "2026-11-21" },
   { id: "v3199", title: "Plane Crash Conspiracy Freaks Have Lost Their Minds", thumbnailId: "NDKaGbpOqTQ", added: "2026-11-21" },
-  { id: "v3200", title: "Plane Crash Conspiracy Freaks Have Lost Their Minds", thumbnailId: "NDKaGbpOqTQ", added: "2026-11-21" },
-  { id: "v3201", title: "Well That's Getting Worse", thumbnailId: "zkg_EILRgkI", added: "2026-11-21" },
+  { id: "v3200", title: "I Don't Get It", thumbnailId: "MYo0fhQIeI8", added: "2026-11-22" },
+  { id: "v3201", title: "I Finally Went Through All of It", thumbnailId: "-KNEVXNeRjM", added: "2026-11-22" },
+  { id: "v3202", title: "I Finally Went Through All of It", thumbnailId: "-KNEVXNeRjM", added: "2026-11-22" },
+  { id: "v3203", title: "I Don't Get It", thumbnailId: "MYo0fhQIeI8", added: "2026-11-22" },
 ]
 
 export function getAllVideos(): Video[] {
