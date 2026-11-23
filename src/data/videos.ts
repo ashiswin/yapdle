@@ -3209,8 +3209,10 @@ const videos: Video[] = [
   { id: "v3199", title: "Plane Crash Conspiracy Freaks Have Lost Their Minds", thumbnailId: "NDKaGbpOqTQ", added: "2026-11-21" },
   { id: "v3200", title: "I Don't Get It", thumbnailId: "MYo0fhQIeI8", added: "2026-11-22" },
   { id: "v3201", title: "I Finally Went Through All of It", thumbnailId: "-KNEVXNeRjM", added: "2026-11-22" },
-  { id: "v3202", title: "I Finally Went Through All of It", thumbnailId: "-KNEVXNeRjM", added: "2026-11-22" },
-  { id: "v3203", title: "I Don't Get It", thumbnailId: "MYo0fhQIeI8", added: "2026-11-22" },
+  { id: "v3202", title: "Scientology is Fighting My Neighbors", thumbnailId: "Q_54G-cRIEs", added: "2026-11-23" },
+  { id: "v3203", title: "EDP445 Finally Got Arrested", thumbnailId: "QndXYqhq5IE", added: "2026-11-23" },
+  { id: "v3204", title: "Scientology is Fighting My Neighbors", thumbnailId: "Q_54G-cRIEs", added: "2026-11-23" },
+  { id: "v3205", title: "EDP445 Finally Got Arrested", thumbnailId: "QndXYqhq5IE", added: "2026-11-23" },
 ]
 
 export function getAllVideos(): Video[] {
