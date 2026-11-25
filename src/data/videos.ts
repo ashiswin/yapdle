@@ -3213,8 +3213,10 @@ const videos: Video[] = [
   { id: "v3203", title: "EDP445 Finally Got Arrested", thumbnailId: "QndXYqhq5IE", added: "2026-11-23" },
   { id: "v3204", title: "Well That Interview Was Trash", thumbnailId: "aP8HKTbAM9g", added: "2026-11-24" },
   { id: "v3205", title: "I Hope the Elden Ring Movie is Good", thumbnailId: "zTVT5b94YJo", added: "2026-11-24" },
-  { id: "v3206", title: "Well That Interview Was Trash", thumbnailId: "aP8HKTbAM9g", added: "2026-11-24" },
-  { id: "v3207", title: "I Hope the Elden Ring Movie is Good", thumbnailId: "zTVT5b94YJo", added: "2026-11-24" },
+  { id: "v3206", title: "My Thoughts on Godzilla Minus Zero", thumbnailId: "kbcsnwral30", added: "2026-11-25" },
+  { id: "v3207", title: "People Are Getting Violent Over This Trash", thumbnailId: "vmtJooazL38", added: "2026-11-25" },
+  { id: "v3208", title: "My Thoughts on Godzilla Minus Zero", thumbnailId: "kbcsnwral30", added: "2026-11-25" },
+  { id: "v3209", title: "People Are Getting Violent Over This Trash", thumbnailId: "vmtJooazL38", added: "2026-11-25" },
 ]
 
 export function getAllVideos(): Video[] {
