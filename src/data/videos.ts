@@ -3215,8 +3215,8 @@ const videos: Video[] = [
   { id: "v3205", title: "I Hope the Elden Ring Movie is Good", thumbnailId: "zTVT5b94YJo", added: "2026-11-24" },
   { id: "v3206", title: "My Thoughts on Godzilla Minus Zero", thumbnailId: "kbcsnwral30", added: "2026-11-25" },
   { id: "v3207", title: "People Are Getting Violent Over This Trash", thumbnailId: "vmtJooazL38", added: "2026-11-25" },
-  { id: "v3208", title: "My Thoughts on Godzilla Minus Zero", thumbnailId: "kbcsnwral30", added: "2026-11-25" },
-  { id: "v3209", title: "People Are Getting Violent Over This Trash", thumbnailId: "vmtJooazL38", added: "2026-11-25" },
+  { id: "v3208", title: "$150 for This Trash is Disgusting", thumbnailId: "Qu_U6m_F6VA", added: "2026-11-26" },
+  { id: "v3209", title: "$150 for This Trash is Disgusting", thumbnailId: "Qu_U6m_F6VA", added: "2026-11-26" },
 ]
 
 export function getAllVideos(): Video[] {
