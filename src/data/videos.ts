@@ -3216,7 +3216,10 @@ const videos: Video[] = [
   { id: "v3206", title: "My Thoughts on Godzilla Minus Zero", thumbnailId: "kbcsnwral30", added: "2026-11-25" },
   { id: "v3207", title: "People Are Getting Violent Over This Trash", thumbnailId: "vmtJooazL38", added: "2026-11-25" },
   { id: "v3208", title: "$150 for This Trash is Disgusting", thumbnailId: "Qu_U6m_F6VA", added: "2026-11-26" },
-  { id: "v3209", title: "$150 for This Trash is Disgusting", thumbnailId: "Qu_U6m_F6VA", added: "2026-11-26" },
+  { id: "v3209", title: "Huge Change at DC Studios", thumbnailId: "Bqapyhi7BCI", added: "2026-11-27" },
+  { id: "v3210", title: "He Fell for the Oldest Trick in the Book", thumbnailId: "_H2RApQS9dI", added: "2026-11-27" },
+  { id: "v3211", title: "Huge Change at DC Studios", thumbnailId: "Bqapyhi7BCI", added: "2026-11-27" },
+  { id: "v3212", title: "He Fell for the Oldest Trick in the Book", thumbnailId: "_H2RApQS9dI", added: "2026-11-27" },
 ]
 
 export function getAllVideos(): Video[] {
