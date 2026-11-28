@@ -3218,8 +3218,10 @@ const videos: Video[] = [
   { id: "v3208", title: "$150 for This Trash is Disgusting", thumbnailId: "Qu_U6m_F6VA", added: "2026-11-26" },
   { id: "v3209", title: "Huge Change at DC Studios", thumbnailId: "Bqapyhi7BCI", added: "2026-11-27" },
   { id: "v3210", title: "He Fell for the Oldest Trick in the Book", thumbnailId: "_H2RApQS9dI", added: "2026-11-27" },
-  { id: "v3211", title: "Huge Change at DC Studios", thumbnailId: "Bqapyhi7BCI", added: "2026-11-27" },
-  { id: "v3212", title: "He Fell for the Oldest Trick in the Book", thumbnailId: "_H2RApQS9dI", added: "2026-11-27" },
+  { id: "v3211", title: "Don't Love That", thumbnailId: "suhpV9r5a7U", added: "2026-11-28" },
+  { id: "v3212", title: "They Found a New Level of Degeneracy", thumbnailId: "3Se38gaFk8I", added: "2026-11-28" },
+  { id: "v3213", title: "They Found a New Level of Degeneracy", thumbnailId: "3Se38gaFk8I", added: "2026-11-28" },
+  { id: "v3214", title: "Don't Love That", thumbnailId: "suhpV9r5a7U", added: "2026-11-28" },
 ]
 
 export function getAllVideos(): Video[] {
